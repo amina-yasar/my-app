@@ -6,7 +6,6 @@ import aboutus from './assets/images/aboutus.jpg';
 import getinvolved from './assets/images/getinvolved.jpg';
 import gallery from './assets/images/gallery.jpg';
 import success from './assets/images/success.jpg';
-
 function Cards() {
   const baseCardData = [
     {
@@ -48,13 +47,12 @@ function Cards() {
       img: success,
       title: "Our Success",
       text: "Through dedication, compassion, and community support, we’ve transformed lives and built brighter futures.",
+     
     },
   ];
-
   return (
     <div className="w-100 py-5" style={{ backgroundColor: "#ffffffff" }}>
       <div className="px-4">
-        {/* Our Programs */}
         <h2 className="mb-4">Our Programs</h2>
         <div className="row">
           {baseCardData.slice(0, 4).map((card, idx) => (
@@ -70,8 +68,6 @@ function Cards() {
             </div>
           ))}
         </div>
-
-        {/* About Us */}
         <h2 className="mt-5 mb-4">About Us</h2>
         <div className="row mb-4">
           <div className="col-md-6">
@@ -85,8 +81,6 @@ function Cards() {
             </div>
           </div>
         </div>
-
-        {/* Get Involved */}
         <h2 className="mt-5 mb-4">Get Involved</h2>
         <div className="row mb-4">
           <div className="col-md-6">
@@ -100,8 +94,6 @@ function Cards() {
             </div>
           </div>
         </div>
-
-        {/* Gallery */}
         <h2 className="mt-5 mb-4">Gallery</h2>
         <div className="row mb-4">
           <div className="col-md-6">
@@ -115,8 +107,6 @@ function Cards() {
             </div>
           </div>
         </div>
-
-        {/* Our Success */}
         <h2 className="mt-5 mb-4">Our Success</h2>
         <div className="row">
           <div className="col-md-6">
@@ -130,7 +120,6 @@ function Cards() {
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );

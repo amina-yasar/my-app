@@ -1,5 +1,4 @@
 import orphan from './assets/images/orphan.jpg';
-
 function Logo() {
   return (
     <nav className="navbar bg-light" style={{ height: "60px" }}>

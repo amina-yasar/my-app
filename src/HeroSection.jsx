@@ -1,48 +1,36 @@
 import Background from "./Background";
-import Headings from "./Headings";
-import Buttons from "./Buttons";
-import Cards from "./Cards"; // This renders ONE card
+import Cards from "./Cards";
 import Information from "./Information";
-function HeroSection(){
-     const numberOfCards = 8;
-    return<>
-    {/* background*/}
-      <div className="row" style={{width:"100vw"}}>
-        <div className="col" style={{ textAlign: "center" }}>
+
+function HeroSection() {
+  return (
+    <>
+      {/* Background Image */}
+      <div className="row" style={{ width: "100vw", margin: 0 }}>
+        <div className="col" style={{ textAlign: "center", padding: 0 }}>
           <Background />
         </div>
       </div>
-      {/* Headings */}
-      <div className="row" style={{backgroundColor:"#f2960bff",marginLeft:"1px"}}>
-        <div className="col" style={{ textAlign: "center" }}>
-          <Headings />
-        </div>
+
+      {/* Cards Section - moved up */}
+      <div
+        className="container"
+        style={{
+          width: "100vw",
+          background: "white",
+          overflow: "hidden",
+          marginTop: "20px", // Adjust this as needed
+        }}
+      >
+        <Cards />
       </div>
 
-    {/* Buttons */}
-<div className="row" style={{background:"skin"}}>
-  <div className="col-12">
-    <Buttons />
-  </div>
-</div>
-
-      {/* Cards */}
-    {/* Cards */}
-<div className="container mt-5" style={{position: 'relative',
-        width: '100vw',
-         background:"white",
-        overflow: 'hidden',}}>
-  <Cards />
-</div>
-
-
-
-{/* information */}
-     <div className="row" style={{background:"lightgrey"}}>
-  <Information />
-</div>
-
-    
+      {/* Info Section */}
+      <div className="row" style={{ background: "lightgrey", margin: 0 }}>
+        <Information />
+      </div>
     </>
+  );
 }
+
 export default HeroSection;
