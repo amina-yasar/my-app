@@ -1,124 +1,150 @@
-import shelter from './assets/images/shelter.jpg';
-import food from './assets/images/food.jpg';
-import health from './assets/images/health.jpg';
-import education from './assets/images/education.jpg';
-import aboutus from './assets/images/aboutus.jpg';
-import getinvolved from './assets/images/getinvolved.jpg';
-import gallery from './assets/images/gallery.jpg';
-import success from './assets/images/success.jpg';
 function Cards() {
   const baseCardData = [
     {
-      img: shelter,
+      icon: "bi-house-fill",
+      iconColor: "#e67e22", 
+      bgColor: "#f9e5d0", 
       title: "Safe Shelter & Warmth",
       text: "Providing a loving and secure home where every child feels safe, cared for, and protected from the hardships of the outside world.",
     },
     {
-      img: food,
+      icon: "bi-egg-fried",
+      iconColor: "#28a745",
+      bgColor: "#d4f4dd",
       title: "Nutritious Meals for Growth",
       text: "Ensuring every child receives balanced and healthy meals daily to support their physical growth and overall well-being.",
     },
     {
-      img: health,
+      icon: "bi-heart-pulse-fill",
+      iconColor: "#e74c3c",
+      bgColor: "#f9d6d5", 
       title: "Comprehensive Healthcare Support",
       text: "Offering essential medical care and regular health check-ups to keep children strong, healthy, and thriving.",
     },
     {
-      img: education,
+      icon: "bi-mortarboard-fill",
+      iconColor: "#e67e22", 
+      bgColor: "#f9e5d0", 
       title: "Quality Education for a Brighter Future",
       text: "Empowering children through access to education, helping them build skills and confidence to create a better tomorrow.",
     },
     {
-      img: aboutus,
       title: "About Us",
       text: "We are a passionate team dedicated to innovation and excellence, working tirelessly to deliver outstanding results for our clients.",
     },
     {
-      img: getinvolved,
       title: "Get Involved",
       text: "Join our mission to bring lasting change. Volunteer, donate, or spread the word — your involvement makes a difference.",
     },
     {
-      img: gallery,
       title: "Gallery",
       text: "Step into our world through images that speak louder than words. See the smiles, progress, and heartfelt moments that define our journey.",
     },
     {
-      img: success,
       title: "Our Success",
       text: "Through dedication, compassion, and community support, we’ve transformed lives and built brighter futures.",
-     
     },
   ];
+
   return (
-    <div className="w-100 py-5" style={{ backgroundColor: "#ffffffff" }}>
+    <div className="w-100 py-5">
       <div className="px-4">
-        <h2 className="mb-4">Our Programs</h2>
+        <h2
+          style={{
+            color: "#444", 
+            fontStyle: "italic",
+            fontWeight: "bold",
+            fontFamily: '"Times New Roman", serif',
+            fontSize: "4rem",
+            textAlign: "center",
+            display: "inline-block", 
+          }}
+        >
+          Our Programs
+        </h2>
+
         <div className="row">
           {baseCardData.slice(0, 4).map((card, idx) => (
             <div className="col-md-3 col-sm-6 mb-4" key={idx}>
-              <div className="card h-100">
-                <img src={card.img} className="card-img-top" alt={card.title} style={{ objectFit: "cover", maxHeight: 180 }} />
-                <div className="card-body">
-                  <h5 className="card-title">{card.title}</h5>
-                  <p className="card-text">{card.text}</p>
-                  <a href="#" className="btn btn-primary">Learn More</a>
+              <div
+                className="card h-100 p-3"
+                style={{
+                  maxHeight: 250,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  backgroundColor: card.bgColor || "#fff", 
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    marginBottom: "1rem",
+                    flexShrink: 0,
+                  }}
+                >
+                  {card.icon && (
+                    <div
+                      style={{
+                        width: 50,
+                        height: 50,
+                        borderRadius: "50%",
+                        backgroundColor: card.bgColor,
+                        border: `2px solid ${card.iconColor}`,
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        marginRight: "1rem",
+                        flexShrink: 0,
+                      }}
+                    >
+                      <i
+                        className={`bi ${card.icon}`}
+                        style={{ fontSize: "1.8rem", color: card.iconColor }}
+                      />
+                    </div>
+                  )}
+                  <h5 className="card-title mb-0">{card.title}</h5>
                 </div>
+                <p
+                  className="card-text"
+                  style={{
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    flexGrow: 1,
+                    marginBottom: "1rem",
+                  }}
+                >
+                  {card.text}
+                </p>
+                <a
+                  href="#"
+                  type="button"
+                  className="btn"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #d35400 0%, #e67e22 100%)",
+                    color: "white",
+                    border: "none",
+                    borderRadius: "12px",
+                    padding: "8px 20px",
+                    fontWeight: "600",
+                    marginLeft: "auto",
+                    whiteSpace: "nowrap",
+                    marginRight: "1rem",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    boxShadow: "0 0 12px 3px rgba(128, 128, 128, 0.7)", // gray glow
+                    cursor: "pointer",
+                  }}
+                >
+                  Learn More
+                </a>
               </div>
             </div>
           ))}
-        </div>
-        <h2 className="mt-5 mb-4">About Us</h2>
-        <div className="row mb-4">
-          <div className="col-md-6">
-            <div className="card h-100">
-              <img src={aboutus} className="card-img-top" alt="About Us" />
-              <div className="card-body">
-                <h5 className="card-title">About Us</h5>
-                <p className="card-text">{baseCardData[4].text}</p>
-                <a href="#" className="btn btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 className="mt-5 mb-4">Get Involved</h2>
-        <div className="row mb-4">
-          <div className="col-md-6">
-            <div className="card h-100">
-              <img src={getinvolved} className="card-img-top" alt="Get Involved" />
-              <div className="card-body">
-                <h5 className="card-title">Get Involved</h5>
-                <p className="card-text">{baseCardData[5].text}</p>
-                <a href="#" className="btn btn-primary">Learn More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 className="mt-5 mb-4">Gallery</h2>
-        <div className="row mb-4">
-          <div className="col-md-6">
-            <div className="card h-100">
-              <img src={gallery} className="card-img-top" alt="Gallery" />
-              <div className="card-body">
-                <h5 className="card-title">Gallery</h5>
-                <p className="card-text">{baseCardData[6].text}</p>
-                <a href="#" className="btn btn-primary">View More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2 className="mt-5 mb-4">Our Success</h2>
-        <div className="row">
-          <div className="col-md-6">
-            <div className="card h-100">
-              <img src={success} className="card-img-top" alt="Our Success" />
-              <div className="card-body">
-                <h5 className="card-title">Our Success</h5>
-                <p className="card-text">{baseCardData[7].text}</p>
-                <a href="#" className="btn btn-primary">See Stories</a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

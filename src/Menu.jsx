@@ -1,7 +1,10 @@
 function Menu() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav
+        className="navbar navbar-expand-lg navbar-dark"
+        style={{ backgroundColor: "var(--bs-tertiary-color)" }}
+      >
         <div className="container">
           <button
             className="navbar-toggler"
@@ -14,16 +17,18 @@ function Menu() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+
           <div
             className="collapse navbar-collapse"
             id="navbarSupportedContent"
-            style={{ display: "flex", alignItems: "center" }}  >
+            style={{ display: "flex", alignItems: "center" }}
+          >
             <ul
               className="navbar-nav mb-2 mb-lg-0"
               style={{
-                margin: "0 auto",  
+                margin: "0 auto",
                 display: "flex",
-                gap: "1rem",     
+                gap: "1rem",
               }}
             >
               <li className="nav-item">
@@ -157,12 +162,40 @@ function Menu() {
                 </a>
               </li>
             </ul>
+
             <button
               type="button"
-              className="btn btn-warning"
-              style={{ marginLeft: "auto", whiteSpace: "nowrap", marginRight: "1rem" }}
+              className="btn"
+              style={{
+                background: "linear-gradient(90deg, #d35400 0%, #e67e22 100%)",
+                color: "white",
+                border: "none",
+                borderRadius: "12px",
+                padding: "12px 30px",
+                fontWeight: "600",
+                marginLeft: "auto",
+                whiteSpace: "nowrap",
+                marginRight: "1rem",
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                boxShadow: "0 0 12px 3px rgba(128, 128, 128, 0.7)",
+                cursor: "pointer",
+              }}
             >
-              Donate Us
+              <i
+                className="bi bi-heart-fill"
+                style={{
+                  color: "#e67e22",
+                  fontSize: "1.5rem",
+                  textShadow:
+                    `-1px -1px 0 white,
+                     1px -1px 0 white,
+                    -1px 1px 0 white,
+                     1px 1px 0 white`,
+                }}
+              ></i>
+              Donate Now
             </button>
           </div>
         </div>
@@ -170,4 +203,5 @@ function Menu() {
     </>
   );
 }
+
 export default Menu;
