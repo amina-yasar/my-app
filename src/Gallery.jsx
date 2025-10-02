@@ -1,16 +1,6 @@
 function Gallery() {
   return (
-    <div
-      style={{
-        width: "100%",
-        backgroundColor: "#fff8f0",
-        padding: "2rem 1rem",
-        boxSizing: "border-box",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-      }}
-    >
+    <div >
       <h1
         style={{
           fontFamily: '"Times New Roman", serif',
@@ -55,29 +45,15 @@ function Gallery() {
               backgroundColor: "#fde9dc",
               display: "flex",
               justifyContent: "center",
-              alignItems: "center",
+             
               boxShadow: "0 0 5px 0 rgba(128, 128, 128, 0.3)",
               border: "1px solid #d35400",
               color: "#d35400",
-              flexShrink: 0,
+           
+              fontSize: "1.5rem",
             }}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              viewBox="0 0 24 24"
-              style={{ width: "60%", height: "60%" }}
-            >
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-              <circle cx="8.5" cy="8.5" r="1.5" />
-              <polyline points="21 15 16 10 5 21" />
-            </svg>
+            🎞️
           </div>
           <h3
             style={{

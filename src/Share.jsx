@@ -1,16 +1,6 @@
 function Share() {
   return (
-    <div
-      style={{
-        width: "100%",
-        backgroundColor: "#fff8f0",
-        padding: "2rem 1rem",
-        boxSizing: "border-box",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-      }}
-    >
+    <div>
       <h1
         style={{
           fontFamily: '"Times New Roman", serif',
@@ -24,12 +14,12 @@ function Share() {
           maxWidth: "600px",
         }}
       >
-        Share Our Story
+        Our Stories
       </h1>
 
       <div
         style={{
-          width: "100%",
+         width: "100%",
           maxWidth: "400px",
           backgroundColor: "#ffffff",
           borderRadius: "12px",
@@ -37,7 +27,6 @@ function Share() {
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
           textAlign: "left",
           marginLeft: "1rem",
-          boxSizing: "border-box",
         }}
       >
         <div
@@ -56,29 +45,14 @@ function Share() {
               backgroundColor: "#fde9db",
               display: "flex",
               justifyContent: "center",
-              alignItems: "center",
+         
               boxShadow: "0 0 5px 0 rgba(128, 128, 128, 0.3)",
               flexShrink: 0,
+              fontSize: "1.8rem",
             }}
             aria-label="Share Icon"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="#d35400"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="18" cy="5" r="3" />
-              <circle cx="6" cy="12" r="3" />
-              <circle cx="18" cy="19" r="3" />
-              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-            </svg>
+            🔗
           </div>
 
           <h3
@@ -108,7 +82,7 @@ function Share() {
           empowers our mission and inspires others to join the cause.
         </p>
 
-        <div style={{ display: "flex", justifyContent: "flex-start", gap: "1rem" }}>
+        <div style={{ gap: "1rem" }}>
           <button
             type="button"
             style={{

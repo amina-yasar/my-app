@@ -1,30 +1,30 @@
 function Cards() {
   const baseCardData = [
     {
-      icon: "bi-house-fill",
-      iconColor: "#e67e22", 
-      bgColor: "#f9e5d0", 
+      emoji: "🏠",
+    
+      bgColor: "#f9e5d0",
       title: "Safe Shelter & Warmth",
       text: "Providing a loving and secure home where every child feels safe, cared for, and protected from the hardships of the outside world.",
     },
     {
-      icon: "bi-egg-fried",
-      iconColor: "#28a745",
+      emoji: "🍳",
+      
       bgColor: "#d4f4dd",
       title: "Nutritious Meals for Growth",
       text: "Ensuring every child receives balanced and healthy meals daily to support their physical growth and overall well-being.",
     },
     {
-      icon: "bi-heart-pulse-fill",
-      iconColor: "#e74c3c",
-      bgColor: "#f9d6d5", 
+      emoji: "❤️",
+    
+      bgColor: "#f9d6d5",
       title: "Comprehensive Healthcare Support",
       text: "Offering essential medical care and regular health check-ups to keep children strong, healthy, and thriving.",
     },
     {
-      icon: "bi-mortarboard-fill",
-      iconColor: "#e67e22", 
-      bgColor: "#f9e5d0", 
+      emoji: "🎓",
+    
+      bgColor: "#f9e5d0",
       title: "Quality Education for a Brighter Future",
       text: "Empowering children through access to education, helping them build skills and confidence to create a better tomorrow.",
     },
@@ -47,17 +47,17 @@ function Cards() {
   ];
 
   return (
-    <div className="w-100 py-5">
-      <div className="px-4">
+    <div className="w-100 py-5 ">
+      <div className="px-4 ">
         <h2
           style={{
-            color: "#444", 
+            color: "#444",
             fontStyle: "italic",
             fontWeight: "bold",
             fontFamily: '"Times New Roman", serif',
             fontSize: "4rem",
-            textAlign: "center",
-            display: "inline-block", 
+          
+            display: "inline-block",
           }}
         >
           Our Programs
@@ -65,15 +65,15 @@ function Cards() {
 
         <div className="row">
           {baseCardData.slice(0, 4).map((card, idx) => (
-            <div className="col-md-3 col-sm-6 mb-4" key={idx}>
+            <div className=" col-lg-3 col-md-6 col-12 mb-4 d-flex" key={idx}>
               <div
                 className="card h-100 p-3"
                 style={{
                   maxHeight: 250,
-                  display: "flex",
+               
                   flexDirection: "column",
                   justifyContent: "space-between",
-                  backgroundColor: card.bgColor || "#fff", 
+                  backgroundColor: card.bgColor || "#fff",
                 }}
               >
                 <div
@@ -81,10 +81,10 @@ function Cards() {
                     display: "flex",
                     alignItems: "center",
                     marginBottom: "1rem",
-                    flexShrink: 0,
+                   
                   }}
                 >
-                  {card.icon && (
+                  {card.emoji && (
                     <div
                       style={{
                         width: 50,
@@ -92,17 +92,13 @@ function Cards() {
                         borderRadius: "50%",
                         backgroundColor: card.bgColor,
                         border: `2px solid ${card.iconColor}`,
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
+                       
                         marginRight: "1rem",
-                        flexShrink: 0,
+                        fontSize: "1.8rem",
+                 
                       }}
                     >
-                      <i
-                        className={`bi ${card.icon}`}
-                        style={{ fontSize: "1.8rem", color: card.iconColor }}
-                      />
+                      {card.emoji}
                     </div>
                   )}
                   <h5 className="card-title mb-0">{card.title}</h5>
@@ -112,7 +108,7 @@ function Cards() {
                   style={{
                     overflow: "hidden",
                     textOverflow: "ellipsis",
-                    flexGrow: 1,
+                
                     marginBottom: "1rem",
                   }}
                 >
@@ -133,8 +129,7 @@ function Cards() {
                     marginLeft: "auto",
                     whiteSpace: "nowrap",
                     marginRight: "1rem",
-                    display: "flex",
-                    alignItems: "center",
+                   
                     gap: "10px",
                     boxShadow: "0 0 12px 3px rgba(128, 128, 128, 0.7)", // gray glow
                     cursor: "pointer",

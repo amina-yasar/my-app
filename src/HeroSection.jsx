@@ -13,8 +13,8 @@ function HeroSection() {
         <Background />
       </div>
 
-      <div style={{ backgroundColor: "#fff8f0", width: "100vw", padding: 0 }}>
-        <div style={{ width: "100%", margin: 0, padding: 0 }}>
+      <div style={{ backgroundColor: "#fff8f0", width: "100vw"}}>
+        <div style={{ width: "100%"}}>
           <AboutUs />
         </div>
 
@@ -26,8 +26,8 @@ function HeroSection() {
         </div>
 
         <div
-          className="container-fluid"
-          style={{ background: "inherit", overflow: "hidden", padding: "0 15px" }}
+          className="container-fluid "
+          style={{ background: "inherit", overflow: "hidden" }}
         >
           <GetInvolved />
         </div>
@@ -36,18 +36,18 @@ function HeroSection() {
           className="container-fluid"
           style={{ background: "inherit", overflow: "hidden", padding: "0 15px" }}
         >
-          <div className="row" style={{ width: "100%", margin: 0 }}>
-            <div className="col-6" style={{ padding: "1rem" }}>
+          <div className="row" style={{ width: "100%" }}>
+            <div className="col-12 col-md-6" style={{ padding: "1rem" }}>
               <Gallery />
             </div>
-            <div className="col-6" style={{ padding: "1rem" }}>
+            <div className="col-12 col-md-6" style={{ padding: "1rem" }}>
               <Share />
             </div>
           </div>
         </div>
       </div>
 
-      <div style={{ background: "lightgrey", width: "100vw", margin: 0, padding: 0 }}>
+      <div className="col-lg-4 col-md-3" style={{ background: "lightgrey", width: "100vw", margin: 0, padding: 0 }}>
         <Information />
       </div>
     </>

@@ -9,13 +9,13 @@ function LandingPage() {
       style={{ minHeight: '100vh', paddingLeft: 0, paddingRight: 0 }}
     >
       <div className="row">
-        <div className="col col-md-6">
+        <div className="col col-md-3">
           <Navigation />
         </div>
       </div>
 
       <div className="row flex-grow-1">
-        <div className="col col-md-6">
+        <div className="col col-md-3">
           <HeroSection />
         </div>
       </div>
@@ -24,7 +24,7 @@ function LandingPage() {
         className="row bg-secondary text-white"
         style={{ flexShrink: 0, padding: '1rem 0' }}
       >
-        <div className="col col-md-6 text-center">
+        <div className="col col-md-12">
           <Footer />
         </div>
       </div>

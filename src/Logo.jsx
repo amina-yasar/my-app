@@ -1,9 +1,9 @@
 function Logo() {
   return (
     <nav className="navbar" style={{ height: "60px", backgroundColor: "transparent" }}>
-      <div className="container-fluid d-flex align-items-center" style={{ height: "100%" }}>
+      <div className="container-fluid " style={{ height: "100%" }}>
         <a
-          className="navbar-brand d-flex align-items-center"
+          className="navbar-brand d-flex "
           href="#"
           style={{ height: "100%", whiteSpace: "normal", textDecoration: "none" }}
         >
@@ -38,24 +38,12 @@ function Logo() {
                 color: "#2C3E50",
                 letterSpacing: "0.5px",
                 textShadow: "1px 1px 2px rgba(0, 0, 0, 0.1)",
-                userSelect: "none",
+               
               }}
             >
               Hope lives here
             </span>
-            <span
-              style={{
-                display: "block",
-                fontSize: "0.7rem",
-                fontFamily: "'Poppins', sans-serif",
-                fontWeight: "400",
-                color: "#2C3E50",
-                fontStyle: "italic",
-                userSelect: "none",
-              }}
-            >
-              Love is our foundation
-            </span>
+           
           </div>
         </a>
       </div>
