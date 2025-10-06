@@ -13,7 +13,7 @@ function HeroSection() {
         <Background />
       </div>
 
-      <div style={{ backgroundColor: "#fff8f0", width: "100vw"}}>
+      <div style={{ backgroundColor: "#d3c0acff", width: "100vw"}}>
         <div style={{ width: "100%"}}>
           <AboutUs />
         </div>
@@ -47,7 +47,7 @@ function HeroSection() {
         </div>
       </div>
 
-      <div className="col-lg-4 col-md-3" style={{ background: "lightgrey", width: "100vw", margin: 0, padding: 0 }}>
+      <div className="col-lg-4 col-md-3" style={{ background: "#c2bbbbff", width: "100vw", margin: 0, padding: 0 }}>
         <Information />
       </div>
     </>

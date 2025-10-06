@@ -14,7 +14,7 @@ function Navigation() {
       }}
     >
       <div className="row align-items-center">
-        <div className="col-2">
+        <div className="col-2"style={{height:"100%"}}>
           <Logo />
         </div>
         <div className="col" style={{ height: "100%" }}>

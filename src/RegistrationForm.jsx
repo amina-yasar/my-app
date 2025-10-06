@@ -5,7 +5,6 @@ function RegistrationForm() {
     <div className="container" style={{ maxWidth: "600px", margin: "auto" }}>
       <h2 className="mb-4">Registration Form</h2>
       <form>
-        {/* Each form group is a row */}
         <div className="row mb-3 align-items-center">
           <label htmlFor="fullName" className="col-sm-4 col-form-label">
             Full Name

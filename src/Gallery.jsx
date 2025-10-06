@@ -21,7 +21,7 @@ function Gallery() {
         style={{
           width: "100%",
           maxWidth: "400px",
-          backgroundColor: "#ffffff",
+          backgroundColor: "#c2bbbbff",
           borderRadius: "12px",
           padding: "1.5rem",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
@@ -47,7 +47,7 @@ function Gallery() {
               justifyContent: "center",
              
               boxShadow: "0 0 5px 0 rgba(128, 128, 128, 0.3)",
-              border: "1px solid #d35400",
+             
               color: "#d35400",
            
               fontSize: "1.5rem",

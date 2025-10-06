@@ -1,4 +1,4 @@
- function LoginForm() {
+function LoginForm() {
   return (
     <div style={{ maxWidth: "400px", margin: "auto" }}>
       <h2>Login Form</h2>
@@ -39,4 +39,5 @@
     </div>
   );
 }
+
 export default LoginForm;

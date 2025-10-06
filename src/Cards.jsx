@@ -2,30 +2,22 @@ function Cards() {
   const baseCardData = [
     {
       emoji: "🏠",
-    
-      bgColor: "#f9e5d0",
       title: "Safe Shelter & Warmth",
       text: "Providing a loving and secure home where every child feels safe, cared for, and protected from the hardships of the outside world.",
     },
     {
       emoji: "🍳",
-      
-      bgColor: "#d4f4dd",
       title: "Nutritious Meals for Growth",
       text: "Ensuring every child receives balanced and healthy meals daily to support their physical growth and overall well-being.",
     },
     {
       emoji: "❤️",
-    
-      bgColor: "#f9d6d5",
-      title: "Comprehensive Healthcare Support",
+      title: "Healthcare Support",
       text: "Offering essential medical care and regular health check-ups to keep children strong, healthy, and thriving.",
     },
     {
       emoji: "🎓",
-    
-      bgColor: "#f9e5d0",
-      title: "Quality Education for a Brighter Future",
+      title: "Quality Education",
       text: "Empowering children through access to education, helping them build skills and confidence to create a better tomorrow.",
     },
     {
@@ -56,7 +48,7 @@ function Cards() {
             fontWeight: "bold",
             fontFamily: '"Times New Roman", serif',
             fontSize: "4rem",
-          
+            
             display: "inline-block",
           }}
         >
@@ -70,10 +62,11 @@ function Cards() {
                 className="card h-100 p-3"
                 style={{
                   maxHeight: 250,
-               
+                    backgroundColor: "#c2bbbbff",
                   flexDirection: "column",
+                  border:"none",
                   justifyContent: "space-between",
-                  backgroundColor: card.bgColor || "#fff",
+                
                 }}
               >
                 <div
@@ -90,9 +83,10 @@ function Cards() {
                         width: 50,
                         height: 50,
                         borderRadius: "50%",
-                        backgroundColor: card.bgColor,
-                        border: `2px solid ${card.iconColor}`,
-                       
+                        backgroundColor: "#fde9dc",
+                     
+                        display:"flex",
+                        justifyContent:"center",
                         marginRight: "1rem",
                         fontSize: "1.8rem",
                  
@@ -101,15 +95,18 @@ function Cards() {
                       {card.emoji}
                     </div>
                   )}
-                  <h5 className="card-title mb-0">{card.title}</h5>
+                  <h5 className="card-title mb-0 "style={{color:"#d35400",
+                  fontFamily: '"Times New Roman", serif',
+                  fontSize: "1.5rem",
+                  fontWeight: "bold",
+                  }}>{card.title}</h5>
                 </div>
                 <p
                   className="card-text"
                   style={{
                     overflow: "hidden",
                     textOverflow: "ellipsis",
-                
-                    marginBottom: "1rem",
+                    marginBottom:"0rem"
                   }}
                 >
                   {card.text}
@@ -129,7 +126,7 @@ function Cards() {
                     marginLeft: "auto",
                     whiteSpace: "nowrap",
                     marginRight: "1rem",
-                   
+                  
                     gap: "10px",
                     boxShadow: "0 0 12px 3px rgba(128, 128, 128, 0.7)", // gray glow
                     cursor: "pointer",

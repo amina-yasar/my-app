@@ -78,7 +78,10 @@ function Information() {
       <div className="row">
         {infoData.map((item, index) => (
           <div className="col" key={index}>
-            <h4>{item.title}</h4>
+            <h4 style={{color:"#d35400",
+                  fontFamily: '"Times New Roman", serif',
+                  fontSize: "1.5rem",
+                  fontWeight: "bold"}}>{item.title}</h4>
             <p>{item.text}</p>
           </div>
         ))}

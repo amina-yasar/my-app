@@ -21,7 +21,7 @@ function Share() {
         style={{
          width: "100%",
           maxWidth: "400px",
-          backgroundColor: "#ffffff",
+          backgroundColor: "#c2bbbbff",
           borderRadius: "12px",
           padding: "1.5rem",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
