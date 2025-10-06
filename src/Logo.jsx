@@ -1,9 +1,8 @@
 import navLogo from './assets/images/navLogo.png'; // adjust path if needed
-
 function Logo() {
   return (
-    <nav className="navbar" style={{backgroundColor: "transparent" }}>
-      <div className="container-fluid ">
+    <nav className="navbar">
+      <div className="container-fluid">
         <a
           className="navbar-brand d-flex "
           href="#"
@@ -13,10 +12,10 @@ function Logo() {
             src={navLogo}
             alt="Logo"
             style={{
-            width: "auto",
+              width: "auto",
               height: "40px",
-              objectFit: "contain",
-         
+             
+         backgroundColor: "transparent"
             }}
           />
 

@@ -12,7 +12,7 @@ function Menu() {
       >
         <div
           className="container d-flex align-items-center justify-content-between flex-wrap"
-          style={{ height: "100%" }}
+          style={{ height: "100%", position: "relative" }} // ✅ Added relative positioning here
         >
           <ul
             className="navbar-nav d-flex flex-row flex-wrap align-items-center mb-0"
@@ -28,118 +28,101 @@ function Menu() {
                 Home
               </a>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                data-bs-toggle="dropdown"
-              >
+
+            {/* ABOUT US */}
+            <li className="nav-item dropdown" style={{ position: "relative" }}>
+              <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                 About Us
               </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Our Team
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Our History
-                  </a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Vision
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Our Mission
-                  </a>
-                </li>
+              <ul
+                className="dropdown-menu"
+                style={{
+                  position: "absolute",
+                  top: "100%",
+                  left: 0,
+                  zIndex: 9999,
+                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+                  borderRadius: "0.5rem",
+                  overflow: "hidden",
+                }}
+              >
+                <li><a className="dropdown-item" href="#">Our Team</a></li>
+                <li><a className="dropdown-item" href="#">Our History</a></li>
+                <li><hr className="dropdown-divider" /></li>
+                <li><a className="dropdown-item" href="#">Vision</a></li>
+                <li><a className="dropdown-item" href="#">Our Mission</a></li>
               </ul>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                data-bs-toggle="dropdown"
-              >
+
+            {/* OUR PROGRAMS */}
+            <li className="nav-item dropdown" style={{ position: "relative" }}>
+              <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                 Our Programs
               </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Shelter
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Nutrition
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Health
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Education
-                  </a>
-                </li>
+              <ul
+                className="dropdown-menu"
+                style={{
+                  position: "absolute",
+                  top: "100%",
+                  left: 0,
+                  zIndex: 9999,
+                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+                  borderRadius: "0.5rem",
+                  overflow: "hidden",
+                }}
+              >
+                <li><a className="dropdown-item" href="#">Shelter</a></li>
+                <li><a className="dropdown-item" href="#">Nutrition</a></li>
+                <li><a className="dropdown-item" href="#">Health</a></li>
+                <li><a className="dropdown-item" href="#">Education</a></li>
               </ul>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                data-bs-toggle="dropdown"
-              >
+
+            {/* GET INVOLVED */}
+            <li className="nav-item dropdown" style={{ position: "relative" }}>
+              <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                 Get Involved
               </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Volunteers
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Partner
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Fundraise
-                  </a>
-                </li>
+              <ul
+                className="dropdown-menu"
+                style={{
+                  position: "absolute",
+                  top: "100%",
+                  left: 0,
+                  zIndex: 9999,
+                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+                  borderRadius: "0.5rem",
+                  overflow: "hidden",
+                }}
+              >
+                <li><a className="dropdown-item" href="#">Volunteers</a></li>
+                <li><a className="dropdown-item" href="#">Partner</a></li>
+                <li><a className="dropdown-item" href="#">Fundraise</a></li>
               </ul>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                data-bs-toggle="dropdown"
-              >
+
+            {/* GALLERY */}
+            <li className="nav-item dropdown" style={{ position: "relative" }}>
+              <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                 Gallery
               </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Images
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Videos
-                  </a>
-                </li>
+              <ul
+                className="dropdown-menu"
+                style={{
+                  position: "absolute",
+                  top: "100%",
+                  left: 0,
+                  zIndex: 9999,
+                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+                  borderRadius: "0.5rem",
+                  overflow: "hidden",
+                }}
+              >
+                <li><a className="dropdown-item" href="#">Images</a></li>
+                <li><a className="dropdown-item" href="#">Videos</a></li>
               </ul>
             </li>
+
             <li className="nav-item">
               <a className="nav-link active" href="#">
                 Contact Us
@@ -147,6 +130,7 @@ function Menu() {
             </li>
           </ul>
 
+          {/* DONATE NOW BUTTON */}
           <button
             type="button"
             className="btn"
