@@ -1,6 +1,7 @@
-import LandingPage from './LandingPage';
+//import LandingPage from './LandingPage';
 // import RegistrationForm  from './RegistrationForm';
-// import LoginForm from "./LoginForm";  
+// import LoginForm from "./LoginForm";
+import LogIn from "./LogIn";  
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
         <div className="col-6"><LoginForm /></div>
       </div>
       */}
-      <LandingPage />
+      {/* <LandingPage /> */}
+      <LogIn />
     </>
   );
 }
