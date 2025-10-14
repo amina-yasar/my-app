@@ -11,7 +11,7 @@ function LogIn() {
     <>
       <form onSubmit={handleSubmit}>
         <div className="row mb-3 col-5 ms-2">
-          <label htmlFor="username">Username</label>
+         <label htmlFor="username">Username</label>
           <input ref={usernameRef} type="text" name="" id="username" />
         </div>
         <div className="row mb-3 col-5 ms-2">

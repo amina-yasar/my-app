@@ -1,20 +1,26 @@
-//import LandingPage from './LandingPage';
-// import RegistrationForm  from './RegistrationForm';
+// import LandingPage from './LandingPage';
+//  import RegistrationForm  from './RegistrationForm';
 // import LoginForm from "./LoginForm";
-import LogIn from "./LogIn";  
+//import LogIn from "./LogIn"; 
+//import Workers from "./Workers"; 
+// import ContactUs from "./ContactUs";
+// import AboutusPage from "./AboutusPage";
+// import DonateNow from "./DonateNow";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
   return (
     <>
-      {/*
-      <div className="row">
-        <div className="col-6"><RegistrationForm /></div>
-        <div className="col-6"><LoginForm /></div>
-      </div>
-      */}
+    
+     {/* <RegistrationForm /> */}
+       {/* <LoginForm /> */}
+      
       {/* <LandingPage /> */}
-      <LogIn />
+      {/* <LogIn /> */}
+      {/* <Workers /> */}
+      {/* <ContactUs /> */}
+      {/* <AboutusPage /> */}
+      {/* <DonateNow /> */}
     </>
   );
 }
