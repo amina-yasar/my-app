@@ -1,31 +1,22 @@
-function Information() {
-  const iconStyle = {
-    width: 16,
-    height: 16,
-    stroke: "#d35400",
-    strokeWidth: 2,
-    fill: "none",
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    verticalAlign: "middle",
-    marginRight: "6px",
-  };
+import React from "react";
+import './Information.css'; // Import the external CSS file
 
-  const quickLinkColors = {
-    home: "#2980b9",
-    programs: "#27ae60",
-    contact: "#e67e22",
-    gallery: "#8e44ad",
-  };
+function Information() {
 
   const infoData = [
     {
       title: "📞 Contact Us",
       text: (
         <>
-          <span style={iconStyle}>🎥</span> Orphanage Story & Mission Recap<br />
-          <span style={iconStyle}>📞</span> ph: +9200000<br />
-          <span style={iconStyle}>✉️</span> Email: aminayasir805@gmail.com
+          <span className="icon-style">🎥</span> Orphanage Story & Mission Recap<br />
+          <span className="icon-style">📞</span> ph: +9200000<br />
+          <span className="icon-style">✉️</span> Email:{" "}
+          <a
+            href="mailto:aminayasir805@gmail.com"
+            className="link email-link"
+          >
+            aminayasir805@gmail.com
+          </a>
         </>
       ),
     },
@@ -33,20 +24,37 @@ function Information() {
       title: "🔗 Quick Links",
       text: (
         <>
-          <span style={{ verticalAlign: "middle", marginRight: "6px" }}>🏠</span>
-          Home
+          <span className="icon-style">🏠</span>
+          <a
+            href="/home"
+            className="link home"
+          >
+            Home
+          </a>
           <br />
-
-          <span style={{ verticalAlign: "middle", marginRight: "6px" }}>🎓</span>
-          Programs
+          <span className="icon-style">🎓</span>
+          <a
+            href="/programs"
+            className="link programs"
+          >
+            Programs
+          </a>
           <br />
-
-          <span style={{ verticalAlign: "middle", marginRight: "6px" }}>📱</span>
-          Contact
+          <span className="icon-style">📱</span>
+          <a
+            href="/contact"
+            className="link contact"
+          >
+            Contact
+          </a>
           <br />
-
-          <span style={{ verticalAlign: "middle", marginRight: "6px" }}>🖼️</span>
-          Gallery
+          <span className="icon-style">🖼️</span>
+          <a
+            href="/gallery"
+            className="link gallery"
+          >
+            Gallery
+          </a>
         </>
       ),
     },
@@ -54,20 +62,43 @@ function Information() {
       title: "📬 Connect with Us",
       text: (
         <>
-          <span style={{ verticalAlign: "middle", marginRight: "6px" }}>📘</span>
-          Facebook
+          <span className="icon-style">📘</span>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link"
+          >
+            Facebook
+          </a>
           <br />
-
-          <span style={{ verticalAlign: "middle", marginRight: "6px" }}>📸</span>
-          Instagram
+          <span className="icon-style">📸</span>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link"
+          >
+            Instagram
+          </a>
           <br />
-
-          <span style={{ verticalAlign: "middle", marginRight: "6px" }}>▶️</span>
-          YouTube
+          <span className="icon-style">▶️</span>
+          <a
+            href="https://youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link"
+          >
+            YouTube
+          </a>
           <br />
-
-          <span style={{ verticalAlign: "middle", marginRight: "6px" }}>📰</span>
-          Newsletter
+          <span className="icon-style">📰</span>
+          <a
+            href="/newsletter"
+            className="link gallery"
+          >
+            Newsletter
+          </a>
         </>
       ),
     },
@@ -78,10 +109,7 @@ function Information() {
       <div className="row">
         {infoData.map((item, index) => (
           <div className="col" key={index}>
-            <h4 style={{color:"#d35400",
-                  fontFamily: '"Times New Roman", serif',
-                  fontSize: "1.5rem",
-                  fontWeight: "bold"}}>{item.title}</h4>
+            <h4>{item.title}</h4>
             <p>{item.text}</p>
           </div>
         ))}

@@ -1,144 +1,64 @@
+import React from "react";
+import shelter from "./assets/images/shelter.jpg";
+import food from "./assets/images/food.jpg";
+import health from "./assets/images/health.jpg";
+import education from "./assets/images/education.jpg";
+
+// Import the CSS file
+import './Cards.css';
+
+const programs = [
+  {
+    title: "Safe Shelter & Warmth",
+    description:
+      "A loving and secure home environment where every child is cared for and protected from the outside world. Our shelter provides warmth, safety, and stability, ensuring that every child feels loved and supported in their new home. We believe that a safe environment is the first step toward healing and growth.",
+    image: shelter,
+  },
+  {
+    title: "Nutritious Meals for Growth",
+    description:
+      "We provide balanced, healthy meals that are designed to support physical and mental development. Each meal is carefully planned to ensure that the children receive the necessary nutrients for their growth. Our focus is on nourishing not just the body, but also the spirit, by fostering a sense of belonging and care through shared meals.",
+    image: food,
+  },
+  {
+    title: "Healthcare Support",
+    description:
+      "We offer comprehensive healthcare services, including regular check-ups, vaccinations, and medical care to ensure that every child is healthy and strong. Our medical staff works closely with the children to monitor their growth and address any physical or emotional health needs, providing a holistic approach to well-being.",
+    image: health,
+  },
+  {
+    title: "Quality Education",
+    description:
+      "Our education program empowers children by providing access to high-quality education that builds both academic and life skills. We aim to give every child the tools they need to succeed in life — whether that's excelling in school, developing talents, or preparing for a future career. Education is key to breaking the cycle of poverty and offering children the chance for a brighter future.",
+    image: education,
+  },
+];
+
 function Cards() {
-  const baseCardData = [
-    {
-      emoji: "🏠",
-      title: "Safe Shelter & Warmth",
-      text: "Providing a loving and secure home where every child feels safe, cared for, and protected from the hardships of the outside world.",
-    },
-    {
-      emoji: "🍳",
-      title: "Nutritious Meals for Growth",
-      text: "Ensuring every child receives balanced and healthy meals daily to support their physical growth and overall well-being.",
-    },
-    {
-      emoji: "❤️",
-      title: "Healthcare Support",
-      text: "Offering essential medical care and regular health check-ups to keep children strong, healthy, and thriving.",
-    },
-    {
-      emoji: "🎓",
-      title: "Quality Education",
-      text: "Empowering children through access to education, helping them build skills and confidence to create a better tomorrow.",
-    },
-    {
-      title: "About Us",
-      text: "We are a passionate team dedicated to innovation and excellence, working tirelessly to deliver outstanding results for our clients.",
-    },
-    {
-      title: "Get Involved",
-      text: "Join our mission to bring lasting change. Volunteer, donate, or spread the word — your involvement makes a difference.",
-    },
-    {
-      title: "Gallery",
-      text: "Step into our world through images that speak louder than words. See the smiles, progress, and heartfelt moments that define our journey.",
-    },
-    {
-      title: "Our Success",
-      text: "Through dedication, compassion, and community support, we’ve transformed lives and built brighter futures.",
-    },
-  ];
-
   return (
-    <div className="w-100 py-5 ">
-      <div className="px-4 ">
-        <h2
-          style={{
-            color: "#444",
-            fontStyle: "italic",
-            fontWeight: "bold",
-            fontFamily: '"Times New Roman", serif',
-            fontSize: "4rem",
-            
-            display: "inline-block",
-          }}
-        >
-          Our Programs
-        </h2>
+    <div className="cards-container">
+      {/* Heading for the section */}
+      <h2 className="cards-heading">Our Programs</h2>
 
-        <div className="row">
-          {baseCardData.slice(0, 4).map((card, idx) => (
-            <div className=" col-lg-3 col-md-6 col-12 mb-4 d-flex" key={idx}>
-              <div
-                className="card h-100 p-3"
-                style={{
-                  maxHeight: 250,
-                    backgroundColor: "#c2bbbbff",
-                  flexDirection: "column",
-                  border:"none",
-                  justifyContent: "space-between",
-                
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    marginBottom: "1rem",
-                   
-                  }}
-                >
-                  {card.emoji && (
-                    <div
-                      style={{
-                        width: 50,
-                        height: 50,
-                        borderRadius: "50%",
-                        backgroundColor: "#fde9dc",
-                     
-                        display:"flex",
-                        justifyContent:"center",
-                        marginRight: "1rem",
-                        fontSize: "1.8rem",
-                 
-                      }}
-                    >
-                      {card.emoji}
-                    </div>
-                  )}
-                  <h5 className="card-title mb-0 "style={{color:"#d35400",
-                  fontFamily: '"Times New Roman", serif',
-                  fontSize: "1.5rem",
-                  fontWeight: "bold",
-                  }}>{card.title}</h5>
-                </div>
-                <p
-                  className="card-text"
-                  style={{
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                    marginBottom:"0rem"
-                  }}
-                >
-                  {card.text}
-                </p>
-                <a
-                  href="#"
-                  type="button"
-                  className="btn"
-                  style={{
-                    background:
-                      "linear-gradient(90deg, #d35400 0%, #e67e22 100%)",
-                    color: "white",
-                    border: "none",
-                    borderRadius: "12px",
-                    padding: "8px 20px",
-                    fontWeight: "600",
-                    marginLeft: "auto",
-                    whiteSpace: "nowrap",
-                    marginRight: "1rem",
-                  
-                    gap: "10px",
-                    boxShadow: "0 0 12px 3px rgba(128, 128, 128, 0.7)", // gray glow
-                    cursor: "pointer",
-                  }}
-                >
-                  Learn More
-                </a>
-              </div>
-            </div>
-          ))}
+      {/* Mapping through the programs */}
+      {programs.map((program, i) => (
+        <div key={i} className="card-item">
+          {/* Left side - Text */}
+          <div className="card-text">
+            <h3 className="card-title">{program.title}</h3>
+            <p className="card-description">{program.description}</p>
+          </div>
+
+          {/* Right side - Image */}
+          <div className="card-image-container">
+            <img
+              src={program.image}
+              alt={program.title}
+              className="card-image"
+            />
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 }

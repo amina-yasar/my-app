@@ -1,0 +1,64 @@
+/* Cards.css */
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-left: 5rem;
+}
+
+.cards-heading {
+  font-family: "Times New Roman", serif;
+  margin-bottom: 2rem;
+  color: rgb(185, 14, 79); /* Title color */
+  font-size: 2.5rem; /* Adjusted for better visibility */
+  font-weight: bold; /* Bold for emphasis */
+}
+
+.card-item {
+  display: flex;
+  gap: 2rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.card-text {
+  flex: 1;
+  min-width: 300px; /* To ensure the text does not shrink too much */
+  font-family: "Times New Roman", serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.card-title {
+  margin-bottom: 1rem;
+  color: rgba(9, 8, 9, 1); /* Title color */
+  font-size: 2rem; /* Title font size */
+  font-weight: bold; /* Bold for emphasis */
+}
+
+.card-description {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.card-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Centering the image */
+  align-items: center; /* Vertical center */
+  min-width: 300px;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px; /* Adjust the height of the images */
+  object-fit: cover;
+  border-radius: 6px;
+}

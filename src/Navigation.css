@@ -1,0 +1,22 @@
+/* Navigation.css */
+
+.nav-container {
+  background-color: white;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+
+.nav-row {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo-col {
+  height: 100%;
+}
+
+.nav-menu-col {
+  height: 100%;
+}

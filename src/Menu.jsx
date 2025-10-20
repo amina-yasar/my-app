@@ -1,51 +1,27 @@
+import React from "react";
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
+import './Menu.css';  // Import your custom CSS file
+
 function Menu() {
   return (
     <>
-      <nav
-        className="navbar navbar-dark"
-        style={{
-          backgroundColor: "var(--bs-tertiary-color)",
-          minHeight: "70px",
-          padding: "0.5rem 1rem",
-          height: "100%",
-        }}
-      >
-        <div
-          className="container d-flex align-items-center justify-content-between flex-wrap"
-          style={{ height: "100%", position: "relative" }} // ✅ Added relative positioning here
-        >
-          <ul
-            className="navbar-nav d-flex flex-row flex-wrap align-items-center mb-0"
-            style={{
-              listStyle: "none",
-              gap: "1rem",
-              flexGrow: 1,
-              marginBottom: 0,
-            }}
-          >
+      <nav className="navbar">
+        <div className="container d-flex align-items-center justify-content-between flex-wrap">
+          {/* Navbar Links */}
+          <ul className="navbar-nav d-flex flex-row flex-wrap align-items-center mb-0">
+            {/* Home */}
             <li className="nav-item">
               <a className="nav-link active" href="#">
                 Home
               </a>
             </li>
 
-            {/* ABOUT US */}
-            <li className="nav-item dropdown" style={{ position: "relative" }}>
+            {/* About Us Dropdown */}
+            <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                 About Us
               </a>
-              <ul
-                className="dropdown-menu"
-                style={{
-                  position: "absolute",
-                  top: "100%",
-                  left: 0,
-                  zIndex: 9999,
-                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-                  borderRadius: "0.5rem",
-                  overflow: "hidden",
-                }}
-              >
+              <ul className="dropdown-menu">
                 <li><a className="dropdown-item" href="#">Our Team</a></li>
                 <li><a className="dropdown-item" href="#">Our History</a></li>
                 <li><hr className="dropdown-divider" /></li>
@@ -54,23 +30,12 @@ function Menu() {
               </ul>
             </li>
 
-            {/* OUR PROGRAMS */}
-            <li className="nav-item dropdown" style={{ position: "relative" }}>
+            {/* Our Programs Dropdown */}
+            <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                 Our Programs
               </a>
-              <ul
-                className="dropdown-menu"
-                style={{
-                  position: "absolute",
-                  top: "100%",
-                  left: 0,
-                  zIndex: 9999,
-                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-                  borderRadius: "0.5rem",
-                  overflow: "hidden",
-                }}
-              >
+              <ul className="dropdown-menu">
                 <li><a className="dropdown-item" href="#">Shelter</a></li>
                 <li><a className="dropdown-item" href="#">Nutrition</a></li>
                 <li><a className="dropdown-item" href="#">Health</a></li>
@@ -78,51 +43,30 @@ function Menu() {
               </ul>
             </li>
 
-            {/* GET INVOLVED */}
-            <li className="nav-item dropdown" style={{ position: "relative" }}>
+            {/* Get Involved Dropdown */}
+            <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                 Get Involved
               </a>
-              <ul
-                className="dropdown-menu"
-                style={{
-                  position: "absolute",
-                  top: "100%",
-                  left: 0,
-                  zIndex: 9999,
-                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-                  borderRadius: "0.5rem",
-                  overflow: "hidden",
-                }}
-              >
+              <ul className="dropdown-menu">
                 <li><a className="dropdown-item" href="#">Volunteers</a></li>
                 <li><a className="dropdown-item" href="#">Partner</a></li>
                 <li><a className="dropdown-item" href="#">Fundraise</a></li>
               </ul>
             </li>
 
-            {/* GALLERY */}
-            <li className="nav-item dropdown" style={{ position: "relative" }}>
+            {/* Gallery Dropdown */}
+            <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                 Gallery
               </a>
-              <ul
-                className="dropdown-menu"
-                style={{
-                  position: "absolute",
-                  top: "100%",
-                  left: 0,
-                  zIndex: 9999,
-                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-                  borderRadius: "0.5rem",
-                  overflow: "hidden",
-                }}
-              >
+              <ul className="dropdown-menu">
                 <li><a className="dropdown-item" href="#">Images</a></li>
                 <li><a className="dropdown-item" href="#">Videos</a></li>
               </ul>
             </li>
 
+            {/* Contact Us */}
             <li className="nav-item">
               <a className="nav-link active" href="#">
                 Contact Us
@@ -130,38 +74,28 @@ function Menu() {
             </li>
           </ul>
 
-          {/* DONATE NOW BUTTON */}
-          <button
-            type="button"
-            className="btn"
-            style={{
-              background: "linear-gradient(90deg, #d35400 0%, #e67e22 100%)",
-              color: "white",
-              border: "none",
-              borderRadius: "12px",
-              padding: "12px 30px",
-              fontWeight: "600",
-              whiteSpace: "nowrap",
-              marginLeft: "1rem",
-              display: "flex",
-              alignItems: "center",
-              gap: "10px",
-              boxShadow: "0 0 12px 3px rgba(128, 128, 128, 0.7)",
-              cursor: "pointer",
-              height: "40px",
-            }}
-          >
-            <i
-              className="bi bi-heart-fill"
-              style={{
-                color: "#e67e22",
-                fontSize: "1.5rem",
-                textShadow:
-                  `-1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white`,
-              }}
-            ></i>
-            Donate Now
-          </button>
+          {/* Search Bar */}
+          <nav className="navbar bg-body-tertiary">
+            <div className="container-fluid">
+              <form className="d-flex" role="search">
+                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                <button className="btn" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+          </nav>
+
+          {/* Donate Now Button */}
+        
+  {/* Use "to" instead of "path" */}
+ <Link to="/donate"> <button type="button" className="btn donate-btn">   
+    <i className="bi bi-heart-fill"></i> {/* Bootstrap heart icon */}
+    Donate Now
+  </button>
+</Link>
+
+
         </div>
       </nav>
     </>

@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
+
+import { BsSuitHeartFill } from "react-icons/bs";
+import "./DonateNow.css";
 
 function DonateNow() {
   const [formData, setFormData] = useState({
@@ -14,15 +18,15 @@ function DonateNow() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Thank you, ${formData.name}! Your donation of $${formData.amount} is appreciated.`);
+    alert(`Thank you, ${formData.name}! Your donation of Rs.${formData.amount} is appreciated.`);
     setFormData({ name: "", email: "", amount: "" }); 
   };
 
   return (
-    <div style={{ border:"solid black",maxWidth: "500px", margin: "auto", padding: "20px", fontFamily: "'Times New Roman', Times, serif" }}>
-      <h1 style={{ color: "orange", textAlign: "center" }}>Donate to Our Orphanage</h1>
+    <div className="donate-container">
+      <h1 className="donate-heading">Donate Us Now</h1>
 
-      <p>
+      <p className="donate-text">
         Your generous donations help provide food, shelter, education, and medical care for the children. Every contribution makes a big difference in their lives and the community.
       </p>
 
@@ -35,7 +39,7 @@ function DonateNow() {
           onChange={handleChange}
           placeholder="Your name"
           required
-          style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
+          className="donate-input"
         />
 
         <label htmlFor="email">Email:</label><br />
@@ -46,40 +50,27 @@ function DonateNow() {
           onChange={handleChange}
           placeholder="Your email"
           required
-          style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
+          className="donate-input"
         />
-<label htmlFor="amount">Donation Amount (Rs):</label><br />
-  <input
-  type="text"
-  id="amount"
-  value={formData.amount}
-  onChange={handleChange}
-  placeholder="Enter amount in Rs"
-  required
-  style={{ width: "100%", padding: "8px", marginBottom: "20px" }}
-/>
 
+        <label htmlFor="amount">Donation Amount (Rs):</label><br />
+        <input
+          type="text"
+          id="amount"
+          value={formData.amount}
+          onChange={handleChange}
+          placeholder="Enter amount in Rs"
+          required
+          className="donate-input donate-input-last"
+        />
 
-
-     <button
-  type="submit"
-  style={{
-    backgroundColor: "orange",
-    color: "white",
-    padding: "8px 16px",   
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-    display: "block",      
-    margin: "20px auto",   
-    fontSize: "14px",      
-    width: "auto",        
-    minWidth: "120px",     
-  }}
->
-  Donate Now
-</button>
-
+        <Link to="/donate"><button
+          type="button"
+          className="donate-btn"
+        >
+          <BsSuitHeartFill className="donate-icon" />
+          Donate Now
+        </button></Link> 
       </form>
     </div>
   );

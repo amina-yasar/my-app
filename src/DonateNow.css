@@ -1,0 +1,61 @@
+/* Container */
+.donate-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Main Title */
+.donate-heading {
+  font-family: "Times New Roman", serif;
+  font-size: 4rem;
+  font-weight: bold;
+  font-style: italic;
+  color: rgb(185, 14, 79);
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Donation Form Text */
+.donate-text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Input Fields */
+.donate-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.donate-input-last {
+  margin-bottom: 20px;
+}
+
+/* Button */
+.donate-btn {
+  background: rgba(4, 4, 4, 1);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 30px;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 0 12px 3px rgba(128, 128, 128, 0.7);
+  cursor: pointer;
+  height: 50px;
+}
+
+/* Icon */
+.donate-icon {
+  color: white;
+  font-size: 1.5rem;
+  stroke: rgba(255, 255, 255, 1);
+  stroke-width: 1.2;
+}

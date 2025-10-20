@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import './RegistrationForm.css'; // Import RegistrationForm specific CSS
 
 function RegistrationForm() {
   const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    address: "",
-    password: "",
-    confirmPassword: "",
-    role: "",
+    fullName: '',
+    email: '',
+    phone: '',
+    address: '',
+    password: '',
+    confirmPassword: '',
+    role: '',
   });
 
   const handleChange = (e) => {
@@ -18,26 +19,15 @@ function RegistrationForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    console.log('Form submitted:', formData);
   };
 
   return (
-    <div
-      style={{
-        maxWidth: "600px",
-        margin: "50px auto",
-        border: "solid black",
-        padding: "20px",
-        fontFamily: "'Times New Roman', Times, serif",
-      }}
-    >
-      <h2 style={{ marginBottom: "20px" }}>Registration Form</h2>
-
+    <div className="registration-form-container">
+      <h2 className="registration-form-heading">Registration Form</h2>
       <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: "1rem" }}>
-          <label htmlFor="fullName" style={{ display: "block", marginBottom: "5px" }}>
-            Full Name
-          </label>
+        <div className="form-group">
+          <label htmlFor="fullName">Full Name</label>
           <input
             type="text"
             id="fullName"
@@ -45,14 +35,11 @@ function RegistrationForm() {
             placeholder="Full Name"
             value={formData.fullName}
             onChange={handleChange}
-            style={{ width: "100%", padding: "8px" }}
           />
         </div>
 
-        <div style={{ marginBottom: "1rem" }}>
-          <label htmlFor="email" style={{ display: "block", marginBottom: "5px" }}>
-            Email
-          </label>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
@@ -60,14 +47,11 @@ function RegistrationForm() {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            style={{ width: "100%", padding: "8px" }}
           />
         </div>
 
-        <div style={{ marginBottom: "1rem" }}>
-          <label htmlFor="phone" style={{ display: "block", marginBottom: "5px" }}>
-            Phone Number
-          </label>
+        <div className="form-group">
+          <label htmlFor="phone">Phone Number</label>
           <input
             type="tel"
             id="phone"
@@ -75,14 +59,11 @@ function RegistrationForm() {
             placeholder="Phone Number"
             value={formData.phone}
             onChange={handleChange}
-            style={{ width: "100%", padding: "8px" }}
           />
         </div>
 
-        <div style={{ marginBottom: "1rem" }}>
-          <label htmlFor="address" style={{ display: "block", marginBottom: "5px" }}>
-            Address
-          </label>
+        <div className="form-group">
+          <label htmlFor="address">Address</label>
           <input
             type="text"
             id="address"
@@ -90,14 +71,11 @@ function RegistrationForm() {
             placeholder="Address"
             value={formData.address}
             onChange={handleChange}
-            style={{ width: "100%", padding: "8px" }}
           />
         </div>
 
-        <div style={{ marginBottom: "1rem" }}>
-          <label htmlFor="password" style={{ display: "block", marginBottom: "5px" }}>
-            Password
-          </label>
+        <div className="form-group">
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
@@ -105,14 +83,11 @@ function RegistrationForm() {
             placeholder="Password"
             value={formData.password}
             onChange={handleChange}
-            style={{ width: "100%", padding: "8px" }}
           />
         </div>
 
-        <div style={{ marginBottom: "1rem" }}>
-          <label htmlFor="confirmPassword" style={{ display: "block", marginBottom: "5px" }}>
-            Confirm Password
-          </label>
+        <div className="form-group">
+          <label htmlFor="confirmPassword">Confirm Password</label>
           <input
             type="password"
             id="confirmPassword"
@@ -120,42 +95,25 @@ function RegistrationForm() {
             placeholder="Confirm Password"
             value={formData.confirmPassword}
             onChange={handleChange}
-            style={{ width: "100%", padding: "8px" }}
           />
         </div>
 
-        <div style={{ marginBottom: "1.5rem" }}>
-          <label htmlFor="role" style={{ display: "block", marginBottom: "5px" }}>
-            Role
-          </label>
+        <div className="form-group">
+          <label htmlFor="role">Role</label>
           <select
             id="role"
             className="form-select"
             value={formData.role}
             onChange={handleChange}
-            style={{ width: "100%", padding: "8px" }}
           >
             <option value="">-- Select Role --</option>
             <option value="donor">Donor</option>
             <option value="volunteer">Volunteer</option>
-            <option value="guardian">Guardian</option>
+            <option value="guardian">Partner</option>
           </select>
         </div>
 
-        <button
-          type="submit"
-          className="btn"
-          style={{
-            backgroundColor: "orange",
-            color: "white",
-            padding: "10px 20px",
-            border: "none",
-            borderRadius: "4px",
-            cursor: "pointer",
-            display: "block",
-            margin: "0 auto",
-          }}
-        >
+        <button type="submit" className="submit-button">
           Register
         </button>
       </form>

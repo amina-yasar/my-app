@@ -1,36 +1,18 @@
-import navLogo from './assets/images/navLogo.png'; // adjust path if needed
+import React from 'react';
+import './Logo.css';  // Import the new CSS file
+import LogoOrphanage from './assets/images/LogoOrphanage.png'; // adjust path if needed
+
 function Logo() {
   return (
     <nav className="navbar">
       <div className="container-fluid">
-        <a
-          className="navbar-brand d-flex "
-          href="#"
-          style={{ height: "100%", whiteSpace: "normal", textDecoration: "none" }}
-        >
+        <a className="navbar-brand d-flex " href="#">
           <img
-            src={navLogo}
+            src={LogoOrphanage}
             alt="Logo"
-            style={{
-              width: "auto",
-              height: "40px",
-             
-         backgroundColor: "transparent"
-            }}
           />
-
-          <div style={{ marginLeft: "10px", lineHeight: "1.15" }}>
-            <span
-              style={{
-                display: "block",
-                fontSize: "0.85rem",
-                fontFamily: "'Playfair Display', serif",
-                fontWeight: "700",
-                color: "#2C3E50",
-                letterSpacing: "0.5px",
-                textShadow: "1px 1px 2px rgba(0, 0, 0, 0.1)",
-              }}
-            >
+          <div>
+            <span>
               Hope lives here
             </span>
           </div>

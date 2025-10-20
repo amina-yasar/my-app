@@ -7,12 +7,10 @@ function ContactUs() {
     phone: "",
     message: "",
   });
-
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Message sent! Thank you for contacting us.");

@@ -1,27 +1,56 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
+import "./LogIn.css"; // Link to external CSS file for styling
+
 function LogIn() {
   const usernameRef = useRef(null);
   const passwordRef = useRef(null);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(usernameRef.current.value);
     console.log(passwordRef.current.value);
-  }
+  };
+
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <div className="row mb-3 col-5 ms-2">
-         <label htmlFor="username">Username</label>
-          <input ref={usernameRef} type="text" name="" id="username" />
-        </div>
-        <div className="row mb-3 col-5 ms-2">
-          <label htmlFor="password">Password</label>
-          <input ref={passwordRef} type="password" name="" id="password" />
-        </div>
-       
-        <button value="login" className="col-5 ms-2" type="submit" >LogIn</button>
-      </form>
-    </>
+    <div className="login-container">
+      <div className="login-form-container">
+        <h1 className="login-heading">Log In</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="username">Username</label>
+            <input
+              ref={usernameRef}
+              type="text"
+              id="username"
+              className="form-input"
+              placeholder="Enter your username"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              ref={passwordRef}
+              type="password"
+              id="password"
+              className="form-input"
+              placeholder="Enter your password"
+            />
+          </div>
+          <div className="form-group">
+            <button type="submit" className="btn-login">
+              Log In
+            </button>
+          </div>
+          <div className="form-footer">
+            <p>
+              Don't have an account? <Link to="/register">Sign Up</Link>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 }
+
 export default LogIn;

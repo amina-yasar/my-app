@@ -1,0 +1,107 @@
+/* Container Styles */
+
+/* Image Column */
+.donate-now-page .image-col {
+  padding-left: 0; /* Ensure no padding on the left side */
+  margin-left: 0; /* Ensure no margin on the left side */
+}
+
+/* Image Styles */
+.donate-now-page .donation-image {
+  width: 550px; /* Makes the image take full width of the container */
+  height: 400px;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Text Content Below the Image */
+.donate-now-page .image-text-content {
+  padding: 1rem 0;
+}
+
+.donate-now-page .paragraph-text {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Form Column */
+.donate-now-page .form-col {
+  padding-left: 0;
+}
+
+/* Donate Now Header */
+.donate-now-page .donate-header {
+  font-family: 'Times New Roman', serif;
+  font-size: 4rem;
+  font-weight: bold;
+  font-style: italic;
+  color: rgb(185, 14, 79);
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Donation Form */
+.donate-now-page .donate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.donate-now-page .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.donate-now-page .label {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Input Fields */
+.donate-now-page .input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Donate Button */
+.donate-now-page .donate-btn {
+  background: rgba(4, 4, 4, 1);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 30px;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 0 12px 3px rgba(128, 128, 128, 0.7);
+  cursor: pointer;
+  height: 50px;
+  margin-top: 5px;
+}
+
+/* Donate Icon */
+.donate-now-page .donate-icon {
+  color: white;
+  font-size: 1.5rem;
+  stroke: rgba(255, 255, 255, 1);
+  stroke-width: 1.2;
+}
+
+/* Disclaimer Section */
+.donate-now-page .donate-disclaimer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.donate-now-page .disclaimer-text {
+  margin: 0;
+}

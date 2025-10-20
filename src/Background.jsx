@@ -1,165 +1,106 @@
-import backGround from './assets/images/backGround.jpg';
+import React from "react";
+import { Link } from 'react-router-dom';
+
+import { BsSuitHeartFill } from "react-icons/bs";
+import picture1 from "./assets/images/picture1.png";
+import picture2 from "./assets/images/picture2.png";
+import picture3 from "./assets/images/picture3.png";
+import picture4 from "./assets/images/picture4.png";
+import picture5 from "./assets/images/picture5.png";
+import picture6 from "./assets/images/picture6.png";
+import pic1 from "./assets/images/pic1.jpg";
+import pic2 from "./assets/images/pic2.jpg";
+import pic3 from "./assets/images/pic3.jpg";
+import "./Background.css"; // Import the CSS file
+
+const slides = [
+  {
+    firstImage: pic1,
+    stackedImages: [picture1, picture2],
+    title: "Hope for Every Child",
+    description:
+      "We provide love, care, and shelter to children who need it most, ensuring they have a safe and nurturing environment to grow and thrive. Through our dedicated programs, we focus on education, health, and emotional support to empower every child’s future. Join us in making a lasting difference and creating a brighter tomorrow for these young lives.",
+  },
+  {
+    firstImage: pic2,
+    stackedImages: [picture3, picture4],
+    title: "Support And Care",
+    description:
+      "Your support provides essential shelter and nutritious food to children in need, ensuring they have a safe and loving environment to call home. Along with meals that nourish their bodies, we offer care, education, and emotional support to help every child reach their full potential. Together, we can bring hope, security, and a brighter future to those who need it most.",
+  },
+  {
+    firstImage: pic3,
+    stackedImages: [picture5, picture6],
+    title: "Join Our Community",
+    description:
+      "Together, we can create brighter futures and bring hope to countless children in need. By joining our community, you become part of a compassionate family dedicated to making a meaningful difference—offering support, love, and opportunities for growth. Your involvement helps us provide shelter, education, and nourishment, transforming lives and building a better tomorrow for every child. Join us and help spread kindness that lasts a lifetime.",
+  },
+];
 
 function Background() {
-  const buttons = [
-    {
-      type: "button",
-      className: "btn",
-      style: {
-        background: "linear-gradient(90deg, #d35400 0%, #e67e22 100%)",
-        color: "white",
-        border: "none",
-        borderRadius: "12px",
-        padding: "12px 30px",
-        fontWeight: "600",
-        whiteSpace: "nowrap",
-        display: "flex",
-        alignItems: "center",
-        gap: "10px",
-        boxShadow: "0 0 12px 3px rgba(128, 128, 128, 0.7)",
-        cursor: "pointer",
-      },
-      iconClassName: "bi bi-heart-fill",
-      iconStyle: {
-        color: "#e67e22",
-        fontSize: "1.5rem",
-        textShadow: `-1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white`,
-      },
-      text: "Donate Us",
-    },
-    {
-      type: "button",
-      className: "btn btn-secondary btn-lg",
-      style: {
-        whiteSpace: "nowrap",
-      },
-      text: "Sponsor A Child",
-    },
-    {
-      type: "button",
-      className: "btn btn-warning btn-lg",
-      style: {
-        background: "linear-gradient(90deg, #d35400 0%, #e67e22 100%)",
-        color: "white",
-        border: "none",
-        borderRadius: "12px",
-        padding: "12px 30px",
-        fontWeight: "600",
-        whiteSpace: "nowrap",
-        gap: "10px",
-        cursor: "pointer",
-      },
-      text: "Learn More",
-    },
-  ];
-
   return (
     <div
-      style={{
-        position: 'relative',
-        width: '100%',
-        height: '100vh',
-        overflow: 'hidden',
-      }}
+      id="customCarousel"
+      className="carousel slide"
+      data-bs-ride="carousel"
     >
-      <img
-        src={backGround}
-        alt="Background"
-        style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          objectPosition: 'top',
-          zIndex: -2,
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
-          zIndex: -1,
-        }}
-      ></div>
-      <div
-        style={{
-          position: 'relative',
-          zIndex: 1,
-          color: 'white',
-          textAlign: 'center',
-          top: '50%',
-          transform: 'translateY(-50%)',
-        }}
-      >
-        <h1
-          style={{
-            background: 'linear-gradient(90deg, #d35400 0%, #e67e22 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            fontStyle: 'italic',
-            fontWeight: 'bold',
-            fontFamily: '"Times New Roman", serif',
-            fontSize: '4rem',
-          }}
-        >
-          Welcome To Our Site
-        </h1>
-        <h3
-          style={{
-            color: 'rgba(226, 238, 243, 0.5)',
-            fontFamily: '"Times New Roman", serif',
-          }}
-        >
-          <i>Supporting orphans with love and care</i>
-        </h3>
-        <h1
-          style={{
-            fontStyle: 'italic',
-            color: 'rgba(226, 238, 243, 0.5)',
-            fontFamily: '"Times New Roman", serif',
-          }}
-        >
-          Every Child Deserves <br />
-          <u style={{ color: "orange" }}>Love</u> ,
-          <u style={{ color: "orange" }}>Shelter</u> & a{' '}
-          <u style={{ fontFamily: '"Times New Roman", serif', color: "orange" }}>
-            Future
-          </u>.
-        </h1>
-        <h3
-          style={{
-            fontStyle: 'italic',
-            color: 'rgba(226, 238, 243, 0.5)',
-            fontFamily: '"Times New Roman", serif',
-          }}
-        >
-          "Join us in changing the lives of orphans in Pakistan."
-        </h3>
-        <div
-          style={{
-            marginTop: '150px',
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '8rem',
-          }}
-        >
-          {buttons.map((btn, index) => (
-            <button
-              key={index}
-              type={btn.type}
-              className={btn.className}
-              style={btn.style}
-            >
-              {btn.iconClassName && (
-                <i className={btn.iconClassName} style={btn.iconStyle}></i>
-              )}
-              {btn.text}
-            </button>
-          ))}
-        </div>
+      <div className="carousel-inner">
+        {slides.map((slide, index) => (
+          <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
+            <div className="container-fluid">
+              <div className="row gx-0 align-items-center">
+                {/* Left Images */}
+                <div className="col-md-6">
+                  <img
+                    src={slide.firstImage}
+                    alt={`firstImage${index + 1}`}
+                    className="first-image"
+                  />
+                  <div className="stacked-images">
+                    {slide.stackedImages.map((img, idx) => (
+                      <img
+                        key={idx}
+                        src={img}
+                        alt={`stacked${index + 1}-${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right content */}
+                <div className="col-md-6 text-start">
+                  <h2>{slide.title}</h2>
+                  <p>{slide.description}</p>
+                  <Link to="/donate"> <button type="button" className="btn">
+                    <BsSuitHeartFill className="BsSuitHeartFill" />
+                    Donate Now
+                  </button></Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
+
+      {/* Carousel controls */}
+      <button
+        className="carousel-control-prev"
+        type="button"
+        data-bs-target="#customCarousel"
+        data-bs-slide="prev"
+      >
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Previous</span>
+      </button>
+      <button
+        className="carousel-control-next"
+        type="button"
+        data-bs-target="#customCarousel"
+        data-bs-slide="next"
+      >
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Next</span>
+      </button>
     </div>
   );
 }

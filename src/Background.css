@@ -1,0 +1,117 @@
+/* Background.css */
+
+/* Carousel Styles */
+.carousel-inner {
+  margin-left: 5rem; /* Add 5rem space from the left */
+  overflow: hidden;  /* Prevent horizontal overflow */
+  width: calc(100% - 5rem); /* Ensure the carousel takes full width minus the left margin */
+}
+
+/* Slide Item */
+.carousel-item {
+  min-height: 400px;
+  overflow: hidden; /* Prevent content overflow from each slide */
+}
+
+.carousel-item .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Left Section with Images */
+.carousel-item .col-md-6:first-child {
+  padding-left: 0;
+  margin-left: 0;
+  display: flex;
+  gap: 10px;
+  height: 380px;
+  justify-content: flex-start;
+}
+
+.carousel-item .col-md-6:first-child img:first-child {
+  width: 300px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0;
+  flex-shrink: 0;
+  display: block;
+}
+
+.carousel-item .col-md-6:first-child .stacked-images {
+  flex-direction: column;
+  justify-content: space-between;
+  height: 380px;
+}
+
+.carousel-item .col-md-6:first-child .stacked-images img {
+  width: 100%;
+  height: 48%;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+/* Right Content */
+.carousel-item .col-md-6.text-start {
+  padding-left: 1rem; /* Reduce padding-left to move content closer to the image */
+  padding-right: 1rem; /* Optional: Adjust right padding if needed */
+  margin-left: -2rem; /* Move the content to the left to reduce the space between text and image */
+}
+
+.carousel-item .col-md-6.text-start h2 {
+  font-family: "Times New Roman", serif;
+}
+
+/* Donate Button */
+.carousel-item .col-md-6.text-start .btn {
+  background: rgba(4, 4, 4, 1);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 30px;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 0 12px 3px rgba(128, 128, 128, 0.7);
+  cursor: pointer;
+  height: 50px;
+}
+
+.carousel-item .col-md-6.text-start .btn .BsSuitHeartFill {
+  color: white;
+  font-size: 1.5rem;
+  stroke: rgba(255, 255, 255, 1);
+  stroke-width: 1.2;
+}
+
+/* Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.carousel-control-prev {
+  left: 10px;
+}
+
+.carousel-control-next {
+  right: 10px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgb(185, 14, 79);
+}
