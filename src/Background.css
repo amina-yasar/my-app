@@ -1,16 +1,15 @@
 /* Background.css */
 
-/* Carousel Styles */
 .carousel-inner {
-  margin-left: 5rem; /* Add 5rem space from the left */
-  overflow: hidden;  /* Prevent horizontal overflow */
-  width: calc(100% - 5rem); /* Ensure the carousel takes full width minus the left margin */
+  margin-left: 5rem; 
+  overflow: hidden;  
+  width: calc(100% - 5rem);
 }
 
-/* Slide Item */
+
 .carousel-item {
   min-height: 400px;
-  overflow: hidden; /* Prevent content overflow from each slide */
+  overflow: hidden; 
 }
 
 .carousel-item .container-fluid {
@@ -20,7 +19,7 @@
   margin-right: 0;
 }
 
-/* Left Section with Images */
+
 .carousel-item .col-md-6:first-child {
   padding-left: 0;
   margin-left: 0;
@@ -54,18 +53,17 @@
   margin-bottom: 8px;
 }
 
-/* Right Content */
+
 .carousel-item .col-md-6.text-start {
-  padding-left: 1rem; /* Reduce padding-left to move content closer to the image */
-  padding-right: 1rem; /* Optional: Adjust right padding if needed */
-  margin-left: -2rem; /* Move the content to the left to reduce the space between text and image */
+  padding-left: 1rem; 
+  padding-right: 1rem; 
+  margin-left: -2rem; 
 }
 
 .carousel-item .col-md-6.text-start h2 {
   font-family: "Times New Roman", serif;
 }
 
-/* Donate Button */
 .carousel-item .col-md-6.text-start .btn {
   background: rgba(4, 4, 4, 1);
   color: white;
@@ -90,7 +88,7 @@
   stroke-width: 1.2;
 }
 
-/* Carousel Controls */
+
 .carousel-control-prev,
 .carousel-control-next {
   width: 40px;

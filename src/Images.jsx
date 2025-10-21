@@ -1,12 +1,11 @@
 import React from 'react';
 import story1 from "./assets/images/story1.jpg";
 import story2 from "./assets/images/story2.jpg";
-import './Images.css';  // Import the external CSS
+import './Images.css';
 
 function Images() {
   return (
     <div className="images-container">
-      {/* First Section: Smaller Image on the Left and Content on the Right */}
       <div className="images-section">
         <div className="image-container">
           <img
@@ -27,9 +26,7 @@ function Images() {
         </div>
       </div>
 
-      {/* Second Section: Image on the Right and Content on the Left */}
       <div className="images-section">
-        {/* Content on the Left */}
         <div className="content-container">
           <h3>
             A Place of Hope and Healing
@@ -41,7 +38,6 @@ function Images() {
           </p>
         </div>
 
-        {/* Image on the Right */}
         <div className="image-container">
           <img
             src={story2}

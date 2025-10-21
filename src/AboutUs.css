@@ -9,8 +9,6 @@
   gap: 3rem;
   align-items: flex-start;
 }
-
-/* Left Content */
 .left-content {
   width: 600px;
   min-width: 320px;
@@ -45,7 +43,7 @@
   padding-left: 0;
 }
 
-/* Right Image */
+
 .right-image img {
   width: 100%;
   max-width: 450px;

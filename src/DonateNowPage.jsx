@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import donation from './assets/images/donation.jpg'; // Correct image import
-import { BsSuitHeartFill } from 'react-icons/bs'; // Importing the heart icon
-import './DonateNowPage.css'; // Import the external CSS file
+import donation from './assets/images/donation.jpg';
+import { BsSuitHeartFill } from 'react-icons/bs';
+import './DonateNowPage.css';
 
 function DonateNowPage() {
   const [formData, setFormData] = useState({
@@ -25,15 +25,13 @@ function DonateNowPage() {
   return (
     <div className="donate-now-page container py-5">
       <div className="row">
-        {/* Column for the Image */}
         <div className="col-md-6 image-col">
           <img
-            src={donation} // Correct image reference
+            src={donation}
             alt="Donate Now"
             className="donation-image"
           />
           
-          {/* Written Content Below the Image */}
           <div className="image-text-content">
             <p className="paragraph-text">
               Every contribution, no matter how big or small, helps provide food, shelter, and education for children in need. 
@@ -43,13 +41,11 @@ function DonateNowPage() {
           </div>
         </div>
 
-        {/* Column for the Donation Form */}
         <div className="col-md-6 form-col">
           <h1 className="donate-header">Donate Now</h1>
 
           <div className="donate-form">
             <form onSubmit={handleSubmit}>
-              {/* Name Field */}
               <div className="form-group">
                 <label htmlFor="name" className="label">Full Name</label>
                 <input
@@ -63,7 +59,6 @@ function DonateNowPage() {
                 />
               </div>
 
-              {/* Phone Number Field */}
               <div className="form-group">
                 <label htmlFor="phone" className="label">Phone Number</label>
                 <input
@@ -77,7 +72,6 @@ function DonateNowPage() {
                 />
               </div>
 
-              {/* Email Field */}
               <div className="form-group">
                 <label htmlFor="email" className="label">Email Address</label>
                 <input
@@ -91,7 +85,6 @@ function DonateNowPage() {
                 />
               </div>
 
-              {/* Donation Amount Field */}
               <div className="form-group">
                 <label htmlFor="amount" className="label">Donation Amount (Rs)</label>
                 <input
@@ -105,7 +98,6 @@ function DonateNowPage() {
                 />
               </div>
 
-              {/* Donate Now Button with Heart Icon */}
               <button type="submit" className="donate-btn">
                 <BsSuitHeartFill className="donate-icon" /> 
                 Donate Now
@@ -113,7 +105,6 @@ function DonateNowPage() {
             </form>
           </div>
 
-          {/* Disclaimer Section */}
           <div className="donate-disclaimer">
             <p className="disclaimer-text">
               Your donation will help provide a better future for children in need. All payments are securely processed.

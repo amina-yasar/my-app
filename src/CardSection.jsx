@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './CardSection.css'; // Import CardSection specific CSS
+import './CardSection.css'; 
 
 function CardSection({ cardData }) {
   return (

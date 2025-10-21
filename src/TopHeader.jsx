@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
-import './TopHeader.css'; // Import the CSS file
+import './TopHeader.css';
 
 function HoverLink({ href, ariaLabel, children, style = {}, ...props }) {
   const [hover, setHover] = useState(false);
@@ -9,9 +9,8 @@ function HoverLink({ href, ariaLabel, children, style = {}, ...props }) {
     <a
       href={href}
       aria-label={ariaLabel}
-      className="hover-link" // Add the class name
       style={{
-        fontSize: style.fontSize || 'inherit', // Inherit custom font size if passed
+        fontSize: style.fontSize || 'inherit', 
         ...style,
       }}
       onMouseEnter={() => setHover(true)}
@@ -25,8 +24,7 @@ function HoverLink({ href, ariaLabel, children, style = {}, ...props }) {
 
 function TopHeader() {
   return (
-    <div className="top-header"> {/* Apply the class for the main container */}
-      {/* Left side: Phone and Email */}
+    <div className="top-header"> 
       <div className="left-section">
         <HoverLink href="tel:+923156614990">
           <FaPhoneAlt />
@@ -41,7 +39,6 @@ function TopHeader() {
         </HoverLink>
       </div>
 
-      {/* Right side: Social Icons */}
       <div className="right-section">
         <HoverLink href="#" ariaLabel="Facebook" style={{ fontSize: '1.1rem', gap: 0 }}>
           <FaFacebookF />

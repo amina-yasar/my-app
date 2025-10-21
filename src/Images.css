@@ -1,10 +1,8 @@
-/* Container for all sections */
 .images-container {
   margin-left: 7rem;
   margin-right: 7rem;
 }
 
-/* Flex container for the first and second sections */
 .images-section {
   display: flex;
   flex-direction: row;
@@ -12,7 +10,6 @@
   align-items: center;
 }
 
-/* Image Styling */
 .image-container {
   flex: 0 0 30%;
   padding-right: 1rem;
@@ -25,7 +22,6 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Content Styling */
 .content-container {
   flex: 1;
   padding-left: 1rem;

@@ -1,22 +1,22 @@
 import React from "react";
-import { Link } from 'react-router-dom';  // Import Link from react-router-dom
-import './Menu.css';  // Import your custom CSS file
+import { Link } from 'react-router-dom'; 
+import './Menu.css'; 
 
 function Menu() {
   return (
     <>
       <nav className="navbar">
         <div className="container d-flex align-items-center justify-content-between flex-wrap">
-          {/* Navbar Links */}
+ 
           <ul className="navbar-nav d-flex flex-row flex-wrap align-items-center mb-0">
-            {/* Home */}
+
             <li className="nav-item">
               <a className="nav-link active" href="#">
                 Home
               </a>
             </li>
 
-            {/* About Us Dropdown */}
+
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                 About Us
@@ -30,7 +30,7 @@ function Menu() {
               </ul>
             </li>
 
-            {/* Our Programs Dropdown */}
+
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                 Our Programs
@@ -43,7 +43,6 @@ function Menu() {
               </ul>
             </li>
 
-            {/* Get Involved Dropdown */}
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                 Get Involved
@@ -55,7 +54,6 @@ function Menu() {
               </ul>
             </li>
 
-            {/* Gallery Dropdown */}
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                 Gallery
@@ -66,7 +64,6 @@ function Menu() {
               </ul>
             </li>
 
-            {/* Contact Us */}
             <li className="nav-item">
               <a className="nav-link active" href="#">
                 Contact Us
@@ -74,7 +71,6 @@ function Menu() {
             </li>
           </ul>
 
-          {/* Search Bar */}
           <nav className="navbar bg-body-tertiary">
             <div className="container-fluid">
               <form className="d-flex" role="search">
@@ -86,11 +82,9 @@ function Menu() {
             </div>
           </nav>
 
-          {/* Donate Now Button */}
-        
-  {/* Use "to" instead of "path" */}
+
  <Link to="/donate"> <button type="button" className="btn donate-btn">   
-    <i className="bi bi-heart-fill"></i> {/* Bootstrap heart icon */}
+    <i className="bi bi-heart-fill"></i> 
     Donate Now
   </button>
 </Link>

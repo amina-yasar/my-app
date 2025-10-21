@@ -1,7 +1,6 @@
 import React from "react";
 import Logo from "./Logo";
 import Menu from "./Menu";
-import './Navigation.css';  // Import the new CSS file
 
 function Navigation() {
   return (

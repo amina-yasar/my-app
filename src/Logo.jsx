@@ -1,6 +1,6 @@
 import React from 'react';
-import './Logo.css';  // Import the new CSS file
-import LogoOrphanage from './assets/images/LogoOrphanage.png'; // adjust path if needed
+import './Logo.css'; 
+import LogoOrphanage from './assets/images/LogoOrphanage.png';
 
 function Logo() {
   return (

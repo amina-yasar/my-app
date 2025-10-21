@@ -4,7 +4,6 @@ import food from "./assets/images/food.jpg";
 import health from "./assets/images/health.jpg";
 import education from "./assets/images/education.jpg";
 
-// Import the CSS file
 import './Cards.css';
 
 const programs = [
@@ -37,19 +36,17 @@ const programs = [
 function Cards() {
   return (
     <div className="cards-container">
-      {/* Heading for the section */}
+
       <h2 className="cards-heading">Our Programs</h2>
 
-      {/* Mapping through the programs */}
       {programs.map((program, i) => (
         <div key={i} className="card-item">
-          {/* Left side - Text */}
+
           <div className="card-text">
             <h3 className="card-title">{program.title}</h3>
             <p className="card-description">{program.description}</p>
           </div>
 
-          {/* Right side - Image */}
           <div className="card-image-container">
             <img
               src={program.image}

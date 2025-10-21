@@ -6,7 +6,6 @@
   font-family: 'Times New Roman', Times, serif;
 }
 
-/* Main Title */
 .donate-heading {
   font-family: "Times New Roman", serif;
   font-size: 4rem;
@@ -17,13 +16,11 @@
   text-align: left;
 }
 
-/* Donation Form Text */
 .donate-text {
   font-size: 1rem;
   margin-bottom: 1rem;
 }
 
-/* Input Fields */
 .donate-input {
   width: 100%;
   padding: 8px;
@@ -34,7 +31,6 @@
   margin-bottom: 20px;
 }
 
-/* Button */
 .donate-btn {
   background: rgba(4, 4, 4, 1);
   color: white;
@@ -52,7 +48,6 @@
   height: 50px;
 }
 
-/* Icon */
 .donate-icon {
   color: white;
   font-size: 1.5rem;

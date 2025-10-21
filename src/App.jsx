@@ -1,6 +1,7 @@
 import LandingPage from './LandingPage';
 //  import RegistrationForm  from './RegistrationForm';
 // import LoginForm from "./LoginForm";
+// import AdminPortal from "./AdminPortal";
 // import LogIn from "./LogIn"; 
 // import DonateNowPage from "./DonateNowPage";
 //import Workers from "./Workers"; 
@@ -17,6 +18,7 @@ function App() {
        {/* <LoginForm /> */}
       {/* <DonateNowPage /> */}
        <LandingPage />
+        {/* <AdminPortal /> */}
       {/* <LogIn /> */}
       {/* <Workers /> */}
       {/* <ContactUs /> */}

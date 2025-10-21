@@ -11,7 +11,7 @@ import picture6 from "./assets/images/picture6.png";
 import pic1 from "./assets/images/pic1.jpg";
 import pic2 from "./assets/images/pic2.jpg";
 import pic3 from "./assets/images/pic3.jpg";
-import "./Background.css"; // Import the CSS file
+import "./Background.css"; 
 
 const slides = [
   {
@@ -67,7 +67,7 @@ function Background() {
                   </div>
                 </div>
 
-                {/* Right content */}
+            
                 <div className="col-md-6 text-start">
                   <h2>{slide.title}</h2>
                   <p>{slide.description}</p>
@@ -82,7 +82,6 @@ function Background() {
         ))}
       </div>
 
-      {/* Carousel controls */}
       <button
         className="carousel-control-prev"
         type="button"

@@ -1,11 +1,11 @@
 import React from "react";
 import AboutUsPic from "./assets/images/AboutUsPic.png";
-import "./AboutUs.css"; // Import the CSS file
+import "./AboutUs.css";
 
 function AboutUs() {
   return (
     <div className="about-us-container">
-      {/* Left Content */}
+
       <div className="left-content">
         <h1>Who We Are</h1>
 
@@ -34,11 +34,7 @@ function AboutUs() {
             community.
           </p>
         </section>
-
-        {/* Add other sections here */}
       </div>
-
-      {/* Right Image */}
       <div className="right-image">
         <img
           src={AboutUsPic}

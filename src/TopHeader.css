@@ -1,8 +1,5 @@
-/* TopHeader.css */
-
-/* Main Container */
 .top-header {
-  background-color: rgb(185, 14, 79); /* Deep pink */
+  background-color: rgb(185, 14, 79);
   color: white;
   font-size: 0.9rem;
   padding: 6px 20px;
@@ -11,26 +8,23 @@
   justify-content: space-between;
   font-family: Arial, sans-serif;
   user-select: none;
-  height:50px;
+  height: 50px;
 }
 
-/* Left side: Phone and Email */
 .top-header .left-section {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/* Right side: Social Icons */
 .top-header .right-section {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/* HoverLink Styles */
 .hover-link {
-  color: white; /* Default color */
+  color: white;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -40,5 +34,5 @@
 }
 
 .hover-link:hover {
-  color: #000000; /* Black color on hover */
+  color: #000000;
 }

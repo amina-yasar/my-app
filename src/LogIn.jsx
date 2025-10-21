@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import "./LogIn.css"; // Link to external CSS file for styling
+import "./LogIn.css"; 
 
 function LogIn() {
   const usernameRef = useRef(null);

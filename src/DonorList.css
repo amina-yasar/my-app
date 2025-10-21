@@ -1,0 +1,38 @@
+.donor-list-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  font-family: "Times New Roman", 'sans-serif';
+}
+
+.donor-list-title {
+  color: rgb(185, 14, 79);
+}
+
+.donor-list-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.donor-list-table th,
+.donor-list-table td {
+  padding: 8px;
+  text-align: left;
+}
+
+.donor-list-table thead tr {
+  background-color: #f2f2f2;
+}
+
+.donor-list-no-records {
+  text-align: center;
+}
+
+.contact-link {
+  padding: 6px 12px;
+  background-color: #b90e4f;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}

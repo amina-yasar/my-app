@@ -4,10 +4,9 @@ import "./Share.css";
 function Share() {
   return (
     <div className="share-container">
-      {/* Main Title */}
+
       <h1 className="share-heading">Our Story</h1>
 
-      {/* Main Story Text */}
       <p className="share-text">
         Our journey began with a simple yet powerful belief: Every child deserves the chance to
         reach their fullest potential. From humble beginnings, we've worked tirelessly to create
@@ -17,7 +16,6 @@ function Share() {
         Through storytelling, we inspire others to join the mission and make a difference.
       </p>
 
-      {/* Share Our Voice Section */}
       <h2 className="share-subheading">Share Our Voice</h2>
       <p className="share-subtext">
         Your stories have the power to spark change. By sharing your experience, you help us

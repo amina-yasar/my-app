@@ -1,18 +1,13 @@
-/* Information.css */
-
-/* Container styling */
 .container {
   padding-top: 0rem;
   padding-bottom: 0rem;
 }
 
-/* Column styling */
 .col {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-/* Title (h4) styling */
 h4 {
   color: rgb(185,14,79);
   font-family: 'Times New Roman', serif;
@@ -20,25 +15,21 @@ h4 {
   font-weight: bold;
 }
 
-/* Link styling */
 a {
   color: black;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-/* Styling for email links */
 a[href^="mailto:"] {
   color: blue;
   transition: color 0.3s ease;
 }
 
-/* Hover effect for links */
 a:hover {
   color: rgb(185,14,79);
 }
 
-/* Icon styling */
 .icon-style {
   width: 16px;
   height: 16px;
@@ -51,7 +42,6 @@ a:hover {
   margin-right: 6px;
 }
 
-/* Quick Links */
 .link {
   transition: color 0.3s ease;
 }
@@ -60,7 +50,6 @@ a:hover {
   color: rgb(185,14,79);
 }
 
-/* Specific Quick Links colors */
 .link.home {
   color: #000000ff;
 }
