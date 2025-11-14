@@ -1,0 +1,43 @@
+.stats-cards {
+  display: flex;
+  flex-wrap: wrap;       /* allow cards to wrap */
+  gap: 20px;
+  margin-top: 90px;  
+      /* add margin from top */
+}
+
+/* Make the first three cards take roughly 1/3 width each */
+.stats-cards .card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 50px;
+  flex: 1 1 calc(33.333% - 20px); /* three cards in a row */
+  box-shadow: 0 4px 12px rgba(128, 128, 128, 0.2);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+   font-family: "Times New Roman", Times, serif;
+}
+
+/* Make the fourth card take full width */
+.stats-cards .card:nth-child(4) {
+  flex: 1 1 100%;       /* full width on new row */
+  margin-top: 20px;     /* space from the row above */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(128, 128, 128, 0.3);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  color: rgb(185, 14, 79);
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #333;
+}

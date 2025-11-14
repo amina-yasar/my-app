@@ -1,0 +1,15 @@
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+.logo-text {
+  margin-left: 10px;
+}
+
+.logo-text span {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #2C3E50;
+}

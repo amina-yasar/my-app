@@ -14,8 +14,11 @@
   font-family: "Times New Roman", serif;
   margin-bottom: 2rem;
   color: rgb(185, 14, 79);
-  font-size: 2.5rem;
+  font-size: 4rem;
+  font-weight: bold;    /* makes text bold */
+  font-style: italic;   /* makes text italic */
 }
+
 
 .card-item {
   display: flex;

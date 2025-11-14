@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import './RegistrationForm.css'; 
 
 function RegistrationForm() {
@@ -113,9 +114,9 @@ function RegistrationForm() {
           </select>
         </div>
 
-        <button type="submit" className="submit-button">
+         <Link to="/registration">"<button type="submit" className="submit-button">
           Register
-        </button>
+        </button></Link>
       </form>
     </div>
   );

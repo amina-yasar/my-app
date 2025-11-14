@@ -1,0 +1,77 @@
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #000;
+  padding: 0.5rem 0.75rem;
+}
+
+.logout-btn {
+  background: rgb(5, 2, 3);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  height: 45px;
+  text-decoration: none;
+}
+
+.logout-btn i {
+  font-size: 1.2rem;
+}
+
+.search-btn {
+  height: 40px;
+  padding: 0 15px;
+  background-color: rgb(185, 14, 79);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: rgb(0, 105, 217);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.menu-heading {
+  font-family: "Times New Roman", serif;
+  font-size: 2.5rem; /* smaller than 4rem for better fit */
+  font-weight: bold;
+  color: rgb(185, 14, 79);
+  font-style: italic;
+}
+
+.right-items {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* space between notification, admin info, search, and logout */
+}
+
+/* Small circular admin image */
+.admin-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}

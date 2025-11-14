@@ -6,7 +6,6 @@
   width: calc(100% - 5rem);
 }
 
-
 .carousel-item {
   min-height: 400px;
   overflow: hidden; 
@@ -18,7 +17,6 @@
   margin-left: 0;
   margin-right: 0;
 }
-
 
 .carousel-item .col-md-6:first-child {
   padding-left: 0;
@@ -52,7 +50,6 @@
   border-radius: 8px;
   margin-bottom: 8px;
 }
-
 
 .carousel-item .col-md-6.text-start {
   padding-left: 1rem; 
@@ -88,7 +85,7 @@
   stroke-width: 1.2;
 }
 
-
+/* Fix for prev/next buttons - slightly below center */
 .carousel-control-prev,
 .carousel-control-next {
   width: 40px;
@@ -96,8 +93,8 @@
   background-color: transparent;
   border: none;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 60%;           /* moved slightly below center */
+  transform: none;    /* remove previous translateY(-50%) */
   z-index: 10;
 }
 
@@ -112,4 +109,7 @@
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: rgb(185, 14, 79);
+  border-radius: 50%;   /* optional: make buttons circular */
+  width: 40px;
+  height: 40px;
 }

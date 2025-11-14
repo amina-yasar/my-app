@@ -7,19 +7,19 @@ import Home from './Home';
 import AdministrationList from './AdministrationList';
 import ChildrenList from './ChildrenList';
 import DonorList from './DonorList';
+import Register from './Register'; // <-- import registration form
+
 const router = createBrowserRouter([
   { path: '/', element: <LandingPage /> },  // Default route
-  { path: '/LandingPage', element: <LandingPage /> },
   { path: '/donate', element: <DonateNowPage /> },
   { path: '/login', element: <LogIn /> },
-//   { path: '/', element: <AdminPortal /> },
-//    { path: '/', element: <AdminPortal /> },
-//   { path: '/admin', element: <AdminPortal /> },
-//   { path: '/home', element: <Home /> },
-//   { path: '/admin/administration-list', element: <AdministrationList /> },
-//   { path: '/admin/children-list', element: <ChildrenList /> },
-// { path: '/admin/donor-list', element: <DonorList /> },
-  // { path: '/registration', element: <Registration /> },
+  { path: '/registration', element: <Register /> }, // <-- new route
+
+  // // Admin Routes
+  // { path: '/', element: <AdminPortal /> },
+  // { path: '/admin/administration-list', element: <AdministrationList /> },
+  // { path: '/admin/children-list', element: <ChildrenList /> },
+  // { path: '/admin/donor-list', element: <DonorList /> },
 ]);
 
 export default router;

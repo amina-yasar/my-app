@@ -44,7 +44,7 @@ function LogIn() {
           </div>
           <div className="form-footer">
             <p>
-              Don't have an account? <Link to="/register">Sign Up</Link>
+              Don't have an account? <Link to="/registration">Sign Up</Link>
             </p>
           </div>
         </form>

@@ -1,0 +1,5 @@
+.admin-row {
+  display: flex;
+  height: 100vh; /* full viewport height */
+  margin: 0;
+}
