@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { donateAPI } from "./api/donateBridge"; // Axios bridge
 import donation from './assets/images/donation.jpg';
-import { BsSuitHeartFill } from 'react-icons/bs';
-import './DonateNowPage.css';
+import { BsSuitHeartFill } from "react-icons/bs";
+import "./DonateNowPage.css";
 
 function DonateNowPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    amount: '',
+    name: "",
+    phone: "",
+    email: "",
+    amount: "",
   });
 
   const handleChange = (e) => {
@@ -16,22 +17,32 @@ function DonateNowPage() {
     setFormData({ ...formData, [id]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Thank you, ${formData.name}, for your donation of Rs. ${formData.amount}.`);
-    setFormData({ name: '', phone: '', email: '', amount: '' });
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // prevent page reload
+    try {
+      // Send all fields to backend
+      const res = await donateAPI({
+        name: formData.name,
+        phone: formData.phone,   // added phone
+        email: formData.email,
+        amount: formData.amount
+      });
+      console.log(res.data); // backend response
+      alert(`Thank you, ${formData.name}! Your donation of Rs.${formData.amount} is appreciated.`);
+      
+      // Clear form
+      setFormData({ name: "", phone: "", email: "", amount: "" });
+    } catch (err) {
+      console.error(err);
+      alert("Error calling Donate API");
+    }
   };
 
   return (
     <div className="donate-now-page container py-5">
       <div className="row">
         <div className="col-md-6 image-col">
-          <img
-            src={donation}
-            alt="Donate Now"
-            className="donation-image"
-          />
-          
+          <img src={donation} alt="Donate Now" className="donation-image" />
           <div className="image-text-content">
             <p className="paragraph-text">
               Every contribution, no matter how big or small, helps provide food, shelter, and education for children in need. 
@@ -99,8 +110,7 @@ function DonateNowPage() {
               </div>
 
               <button type="submit" className="donate-btn">
-                <BsSuitHeartFill className="donate-icon" /> 
-                Donate Now
+                <BsSuitHeartFill className="donate-icon" /> Donate Now
               </button>
             </form>
           </div>

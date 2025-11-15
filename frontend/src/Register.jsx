@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import './Register.css'; 
+import { registerAPI } from "./api/registerBridge";
 import registrationImage from './assets/images/registration.png'; // your image path
 
 function Register() {
@@ -19,9 +20,27 @@ function Register() {
     setFormData({ ...formData, [id]: value });
   };
 
-  const handleSubmit = (e) => {
+  // ✅ Updated handleSubmit to call backend via Axios
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    try {
+      const res = await registerAPI(formData);
+      console.log(res.data); // Backend response
+      alert("Register API called successfully!");
+
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        address: '',
+        password: '',
+        confirmPassword: '',
+        role: '',
+      });
+    } catch (err) {
+      console.error(err);
+      alert("Error calling Register API");
+    }
   };
 
   return (

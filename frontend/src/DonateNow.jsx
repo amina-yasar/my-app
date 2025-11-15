@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
-
+import { donateAPI } from "./api/donateBridge"; // Axios bridge
 import { BsSuitHeartFill } from "react-icons/bs";
 import "./DonateNow.css";
 
@@ -16,20 +15,30 @@ function DonateNow() {
     setFormData({ ...formData, [id]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Thank you, ${formData.name}! Your donation of Rs.${formData.amount} is appreciated.`);
-    setFormData({ name: "", email: "", amount: "" }); 
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // prevent page reload
+    try {
+      // Call backend via Axios
+      const res = await donateAPI(formData);
+      console.log(res.data); // backend response
+      alert(`Thank you, ${formData.name}! Your donation of Rs.${formData.amount} is appreciated.`);
+      
+      // Clear form
+      setFormData({ name: "", email: "", amount: "" });
+    } catch (err) {
+      console.error(err);
+      alert("Error calling Donate API");
+    }
   };
 
   return (
     <div className="donate-container">
       <h1 className="donate-heading">Donate Us Now</h1>
-
       <p className="donate-text">
-        Your generous donations help provide food, shelter, education, and medical care for the children. Every contribution makes a big difference in their lives and the community.
+        Your generous donations help provide food, shelter, education, and medical care for the children.
       </p>
-
+      
+      {/* ✅ Form triggers handleSubmit correctly */}
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label><br />
         <input
@@ -64,13 +73,10 @@ function DonateNow() {
           className="donate-input donate-input-last"
         />
 
-        <Link to="/donate"><button
-          type="button"
-          className="donate-btn"
-        >
-          <BsSuitHeartFill className="donate-icon" />
-          Donate Now
-        </button></Link> 
+        {/* ✅ Submit button: triggers onSubmit */}
+        <button type="submit" className="donate-btn">
+          <BsSuitHeartFill className="donate-icon" /> Donate Now
+        </button>
       </form>
     </div>
   );

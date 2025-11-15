@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { BsSuitHeartFill } from "react-icons/bs";
 import "./Menu.css";
 
 function Menu() {
@@ -54,11 +55,12 @@ function Menu() {
         <button className="btn search-btn" type="submit">Search</button>
       </form>
 
-      <Link to="/donate">
-        <button className="btn donate-btn">
-          <i className="bi bi-heart-fill"></i> Donate Now
-        </button>
-      </Link>
+     <Link to="/donate">
+  <button className="btn donate-btn">
+    <BsSuitHeartFill /> Donate Now
+  </button>
+</Link>
+
     </div>
   );
 }

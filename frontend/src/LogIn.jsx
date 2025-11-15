@@ -1,15 +1,27 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import "./LogIn.css"; 
+import { loginAPI } from "./api/loginBridge"; // Axios bridge
 
 function LogIn() {
   const usernameRef = useRef(null);
   const passwordRef = useRef(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(usernameRef.current.value);
-    console.log(passwordRef.current.value);
+    const data = {
+      username: usernameRef.current.value,
+      password: passwordRef.current.value
+    };
+
+    try {
+      const res = await loginAPI(data);
+      console.log(res.data); // backend response
+      alert("Login API called successfully!");
+    } catch (err) {
+      console.error(err);
+      alert("Error calling Login API");
+    }
   };
 
   return (

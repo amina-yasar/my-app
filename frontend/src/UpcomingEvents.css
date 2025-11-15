@@ -1,0 +1,33 @@
+.events-page {
+  padding: 2rem;
+}
+
+.add-event-form {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.events-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.events-table th, .events-table td {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.donate-btn {
+  background-color: rgb(185, 14, 79);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.donate-btn.delete-btn {
+  background-color: #ff4d6d;
+}

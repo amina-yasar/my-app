@@ -39,6 +39,11 @@
 
 .donate-btn i {
   font-size: 1.2rem;
+ /* Make the heart white */
+}
+
+.donate-btn svg {
+  color: #fff; /* Make the heart white */
 }
 
 .search-btn {
