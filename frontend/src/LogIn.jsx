@@ -1,11 +1,12 @@
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // added useNavigate
 import "./LogIn.css"; 
 import { loginAPI } from "./api/loginBridge"; // Axios bridge
 
 function LogIn() {
   const usernameRef = useRef(null);
   const passwordRef = useRef(null);
+  const navigate = useNavigate(); // for programmatic navigation
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,6 +14,12 @@ function LogIn() {
       username: usernameRef.current.value,
       password: passwordRef.current.value
     };
+
+    // Admin login check
+    if (data.username === "aminayasir805@gmail.com" && data.password === "amina12345") {
+      navigate("/adminportal"); // redirect to admin page
+      return;
+    }
 
     try {
       const res = await loginAPI(data);

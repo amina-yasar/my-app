@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsSuitHeartFill } from "react-icons/bs";
+import { RiAdminLine } from "react-icons/ri";
 import "./Menu.css";
 
 function Menu() {
@@ -49,6 +50,12 @@ function Menu() {
 
         <li className="nav-item"><a className="nav-link" href="#">Contact Us</a></li>
       </ul>
+      
+  <Link to="/login">
+  <button className="admin-btn">
+    <RiAdminLine /> Admin
+  </button>
+</Link>
 
       <form className="d-flex me-2" role="search">
         <input className="form-control ms-3" type="search" placeholder="Search" />
