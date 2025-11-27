@@ -1,10 +1,23 @@
 const express = require("express");
 const router = express.Router();
+const Child = require("./models/Child");
+const auth = require("../middleware/auth"); // JWT middleware
 
-router.post("/", (req, res) => {
-    console.log("🔥 children API Hit");
-    console.log("Received Data:", req.body);
-    res.json({ message: "children route hit successfully!" });
+// POST /api/children/add
+router.post("/add", auth, async (req, res) => {
+  const { name, age, description } = req.body;
+
+  if (!name) return res.status(400).json({ error: "Child name is required" });
+
+  try {
+    const newChild = new Child({ name, age, description });
+    await newChild.save();
+
+    res.json({ message: "Child added successfully", child: newChild });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
 });
 
 module.exports = router;

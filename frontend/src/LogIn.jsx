@@ -1,33 +1,47 @@
 import { useRef } from "react";
-import { Link, useNavigate } from "react-router-dom"; // added useNavigate
-import "./LogIn.css"; 
-import { loginAPI } from "./api/loginBridge"; // Axios bridge
+import { useNavigate, Link } from "react-router-dom";
+import { loginAPI } from "./api/loginBridge";
+import "./LogIn.css";
 
 function LogIn() {
-  const usernameRef = useRef(null);
+  const emailRef = useRef(null);
   const passwordRef = useRef(null);
-  const navigate = useNavigate(); // for programmatic navigation
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = {
-      username: usernameRef.current.value,
-      password: passwordRef.current.value
-    };
 
-    // Admin login check
-    if (data.username === "aminayasir805@gmail.com" && data.password === "amina12345") {
-      navigate("/adminportal"); // redirect to admin page
-      return;
-    }
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
 
     try {
-      const res = await loginAPI(data);
-      console.log(res.data); // backend response
-      alert("Login API called successfully!");
+      const res = await loginAPI({ email, password });
+      console.log("Backend response:", res.data);
+
+      const token = res.data.token;
+      if (!token) {
+        alert("Token not received from backend!");
+        return;
+      }
+
+      // Save JWT
+      localStorage.setItem("authToken", token);
+      console.log("JWT saved:", token);
+
+      // Redirect based on admin
+      if (res.data.isAdmin) {
+        navigate("/adminportal");
+      } else {
+        navigate("/collections");
+      }
+
+      alert("Login successful!");
     } catch (err) {
-      console.error(err);
-      alert("Error calling Login API");
+      console.error(
+        "Login failed:",
+        err.response ? err.response.data : err
+      );
+      alert("Login failed: Invalid credentials or server error");
     }
   };
 
@@ -37,15 +51,17 @@ function LogIn() {
         <h1 className="login-heading">Log In</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="email">Email</label>
             <input
-              ref={usernameRef}
-              type="text"
-              id="username"
+              ref={emailRef}
+              type="email"
+              id="email"
               className="form-input"
-              placeholder="Enter your username"
+              placeholder="Enter your email"
+              required
             />
           </div>
+
           <div className="form-group">
             <label htmlFor="password">Password</label>
             <input
@@ -54,13 +70,16 @@ function LogIn() {
               id="password"
               className="form-input"
               placeholder="Enter your password"
+              required
             />
           </div>
+
           <div className="form-group">
             <button type="submit" className="btn-login">
               Log In
             </button>
           </div>
+
           <div className="form-footer">
             <p>
               Don't have an account? <Link to="/registration">Sign Up</Link>

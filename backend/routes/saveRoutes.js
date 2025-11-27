@@ -1,11 +1,20 @@
 const express = require("express");
 const router = express.Router();
+const Save = require("./models/Save");
 
-router.post("/", (req, res) => {
-    console.log("🔥 save API Hit");
-    console.log("Received Data:", req.body);
+// POST /api/save
+router.post("/", async (req, res) => {
+  const { name, email, message } = req.body;
+  if (!name || !message) return res.status(400).json({ error: "Name and message required" });
 
-    res.json({ message: "save route hit successfully!" });
+  try {
+    const saveData = new Save({ name, email, message });
+    await saveData.save();
+    res.json({ message: "Data saved successfully", saveData });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
 });
 
 module.exports = router;
