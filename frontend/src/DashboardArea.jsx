@@ -1,14 +1,55 @@
-import React from "react";
-import { Link } from "react-router-dom"; // Import Link
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  getChildrenCountAPI,
+  getStaffCountAPI,
+  getDonationsTotalAPI,
+  getEventsCountAPI,
+} from "./api/dashboardBridge"; // Create these API functions
 import "./DashboardArea.css";
 
 function DashboardArea() {
-  // Define cards with title, value, and route
+  const navigate = useNavigate();
+
+  // State for counts
+  const [counts, setCounts] = useState({
+    children: 0,
+    staff: 0,
+    donations: 0,
+    events: 0,
+  });
+
+  // Fetch all counts from API
+  const fetchCounts = async () => {
+    try {
+      const [childrenRes, staffRes, donationsRes, eventsRes] = await Promise.all([
+        getChildrenCountAPI(),
+        getStaffCountAPI(),
+        getDonationsTotalAPI(),
+        getEventsCountAPI(),
+      ]);
+
+      setCounts({
+        children: childrenRes.data.count,
+        staff: staffRes.data.count,
+        donations: donationsRes.data.total, // e.g., sum of donations
+        events: eventsRes.data.count,
+      });
+    } catch (err) {
+      console.error("Failed to fetch dashboard counts", err);
+    }
+  };
+
+  useEffect(() => {
+    fetchCounts();
+  }, []);
+
+  // Define cards with dynamic values
   const cards = [
-    { title: "Total Children", value: 120, route: "/admin/children-list" },
-    { title: "Total Staff", value: 25, route: "/admin/administration-list" },
-    { title: "Total Donations", value: "$ 1,50,000", route: "/admin/donor-list" },
-    { title: "Upcoming Events", value: 3, route: "/admin/upcoming-events" },
+    { title: "Total Children", value: counts.children, route: "/admin/view-child" },
+    { title: "Total Staff", value: counts.staff, route: "/admin/administration-list" },
+    { title: "Total Donations", value: `$ ${counts.donations}`, route: "/admin/donor-list" },
+    { title: "Upcoming Events", value: counts.events, route: "/admin/upcoming-events" },
   ];
 
   return (
@@ -17,14 +58,21 @@ function DashboardArea() {
         {cards.map((card, index) => (
           <Link
             key={index}
-            to={card.route}            // Link to the route
-            className="card"           // Keep existing card styling
-            style={{ textDecoration: "none", color: "inherit" }} // remove default link style
+            to={card.route}
+            className="card"
+            style={{ textDecoration: "none", color: "inherit" }}
           >
             <h3>{card.title}</h3>
             <p>{card.value}</p>
           </Link>
         ))}
+      </div>
+
+      {/* Back Button */}
+      <div className="back-button-container">
+        <button className="back-button" onClick={() => navigate(-1)}>
+          ← Back
+        </button>
       </div>
     </div>
   );

@@ -1,10 +1,12 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const donationSchema = new mongoose.Schema({
-  donorName: { type: String, required: true },
-  email: { type: String },
+  name: { type: String, required: true },
+  email: { type: String, required: true },
   amount: { type: Number, required: true },
-  date: { type: Date, default: Date.now },
-}, { timestamps: true });
+  date: { type: Date, default: Date.now }
+});
 
-module.exports = mongoose.model("Donation", donationSchema);
+const Donation = mongoose.model("Donation", donationSchema);
+
+export default Donation;

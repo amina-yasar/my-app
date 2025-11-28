@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import './Register.css'; 
 import { registerAPI } from "./api/registerBridge";
-import registrationImage from './assets/images/registration.png'; // your image path
+import registrationImage from './assets/images/registration.png';
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -20,14 +20,32 @@ function Register() {
     setFormData({ ...formData, [id]: value });
   };
 
-  // ✅ Updated handleSubmit to call backend via Axios
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const res = await registerAPI(formData);
-      console.log(res.data); // Backend response
-      alert("Register API called successfully!");
 
+    // ✅ Check password match
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    // ✅ Map frontend fields to backend fields
+    const dataToSend = {
+      name: formData.fullName,
+      email: formData.email,
+      password: formData.password,
+      phone: formData.phone,
+      address: formData.address,
+      role: formData.role
+    };
+
+    try {
+      // ✅ Call backend
+      const res = await registerAPI(dataToSend);
+      console.log("Backend response:", res.data);
+      alert("Registered successfully!");
+
+      // ✅ Reset form
       setFormData({
         fullName: '',
         email: '',
@@ -38,15 +56,15 @@ function Register() {
         role: '',
       });
     } catch (err) {
-      console.error(err);
-      alert("Error calling Register API");
+      // ✅ Proper error display
+      console.error("Register API error:", err.response?.data || err);
+      alert(err.response?.data?.error || "Error calling Register API");
     }
   };
 
   return (
     <div className="register-page-container">
       
-      {/* Left Side Image */}
       <div className="register-image">
         <img src={registrationImage} alt="Registration" />
         <p className="register-info">
@@ -54,7 +72,6 @@ function Register() {
         </p>
       </div>
 
-      {/* Right Side Form */}
       <div className="registration-form-container">
         <h1 className="registration-form-heading">Registration Form</h1>
         <form onSubmit={handleSubmit}>
@@ -67,6 +84,7 @@ function Register() {
               placeholder="Full Name"
               value={formData.fullName}
               onChange={handleChange}
+              required
             />
           </div>
 
@@ -79,6 +97,7 @@ function Register() {
               placeholder="Email"
               value={formData.email}
               onChange={handleChange}
+              required
             />
           </div>
 
@@ -115,6 +134,7 @@ function Register() {
               placeholder="Password"
               value={formData.password}
               onChange={handleChange}
+              required
             />
           </div>
 
@@ -127,6 +147,7 @@ function Register() {
               placeholder="Confirm Password"
               value={formData.confirmPassword}
               onChange={handleChange}
+              required
             />
           </div>
 
@@ -137,6 +158,7 @@ function Register() {
               className="form-input"
               value={formData.role}
               onChange={handleChange}
+              required
             >
               <option value="">-- Select Role --</option>
               <option value="donor">Donor</option>
@@ -149,7 +171,6 @@ function Register() {
             Register
           </button>
 
-          {/* Footer with login link */}
           <p className="form-footer">
             Already have an account? <Link to="/login">Log In</Link>
           </p>

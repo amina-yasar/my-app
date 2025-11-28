@@ -49,3 +49,25 @@
   background-color: #ffd1dc;     
   color: rgb(185, 14, 79);       
 }
+/* Submenu container */
+.submenu {
+  list-style: none;
+  padding-left: 25px;   /* indent inside main option */
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* Submenu items */
+.submenu li {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect for submenu items */
+.submenu li:hover {
+  background-color: #ffe4ec;
+  color: rgb(185, 14, 79);
+}

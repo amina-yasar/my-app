@@ -41,3 +41,25 @@
   font-weight: bold;
   color: #333;
 }
+.back-button-container {
+  margin-top: 30px;       /* space after the cards */
+  text-align: center;     /* center the button */
+}
+
+.back-button {
+  background-color: rgb(185, 14, 79);
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: rgb(150, 10, 65);
+  transform: translateY(-2px);
+}
+
