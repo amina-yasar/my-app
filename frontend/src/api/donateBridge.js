@@ -8,3 +8,7 @@ export const donateAPI = async (data) => {
 export const getDonorsAPI = async () => {
   return axios.get("http://localhost:5000/api/donate");
 };
+// Delete a donor by ID
+export const deleteDonorAPI = async (id) => {
+  return axios.delete(`http://localhost:5000/api/donate/${id}`);
+};

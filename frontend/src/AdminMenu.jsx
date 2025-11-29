@@ -1,9 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import admin from "./assets/images/admin.png";
 import "./AdminMenu.css";
 
 function AdminMenu() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Navigate to login page and replace history so back button won't go back to admin
+    navigate("/login", { replace: true });
+    
+  // Optional: clear history stack by replacing with home first
+  // If you want back button to go Home, you could do:
+  window.history.pushState({}, "", "/"); // sets the current history entry to Home
+  };
+
   return (
     <div className="menu">
 
@@ -31,7 +42,7 @@ function AdminMenu() {
           <li className="nav-item d-flex align-items-center">
             <img src={admin} alt="Admin" className="admin-img me-2" />
             <span className="me-2">Admin</span>
-            <Link className="nav-link" to="/admin/profile">Profile</Link>
+            <Link className="nav-link" to="/admin/admin-profile">Profile</Link>
           </li>
         </ul>
 
@@ -42,9 +53,12 @@ function AdminMenu() {
         </form>
 
         {/* Logout */}
-        <Link to="/logout" className="logout-btn d-flex align-items-center">
+        <button
+          onClick={handleLogout}
+          className="logout-btn d-flex align-items-center"
+        >
           Logout
-        </Link>
+        </button>
       </div>
 
     </div>

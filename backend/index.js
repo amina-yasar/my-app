@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // Import routes
+
 import loginRoutes from "./routes/loginRoutes.js";
 import registerRoutes from "./routes/registerRoutes.js";
 import donateRoutes from "./routes/donateRoutes.js";
@@ -14,6 +15,8 @@ import childrenRoutes from "./routes/childrenRoutes.js";
 import membersRoutes from "./routes/membersRoutes.js";
 import eventsRoutes from "./routes/eventsRoutes.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
+import staffRoutes from "./routes/staffRoutes.js";
+
 
 const app = express();
 
@@ -39,6 +42,7 @@ app.use("/api/children", childrenRoutes);
 app.use("/api/members", membersRoutes);
 app.use("/api/events", eventsRoutes);
 app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/staff", staffRoutes); // for other staff operations
 
 // Start server
 const PORT = 5000;

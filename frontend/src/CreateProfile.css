@@ -1,0 +1,88 @@
+.staff-list-container {
+  padding: 1rem 1.5rem;
+  max-width: 650px;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.staff-list-title {
+  font-family: "Times New Roman", serif;
+  color: rgb(185, 14, 79);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.staff-list-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.staff-list-form label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.staff-list-form input,
+.staff-list-form textarea {
+  width: 100%;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.staff-list-form input:focus,
+.staff-list-form textarea:focus {
+  border-color: rgb(185, 14, 79);
+  box-shadow: 0 0 5px rgba(185, 14, 79, 0.4);
+  outline: none;
+}
+
+.staff-list-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.btn-create {
+  padding: 0.45rem 1.2rem;
+  background-color: rgb(185, 14, 79);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-create:hover {
+  background-color: rgb(150, 10, 65);
+}
+
+.btn-back {
+  padding: 0.45rem 1.2rem;
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+  background-color: #999;
+}

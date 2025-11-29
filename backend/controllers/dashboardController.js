@@ -1,6 +1,6 @@
 import Child from "../models/Child.js";
 import Staff from "../models/Staff.js";
-import Donation from "./models/Donation.js";
+import Donation from "../models/Donation.js";
 import Event from "../models/Event.js";
 
 // Get total number of children
@@ -35,11 +35,10 @@ export const getDonationsTotal = async (req, res) => {
     res.status(500).json({ error: "Failed to get donations total" });
   }
 };
-
-// Get upcoming events count
+// Get total number of events (all events, not just future ones)
 export const getEventsCount = async (req, res) => {
   try {
-    const count = await Event.countDocuments({ date: { $gte: new Date() } });
+    const count = await Event.countDocuments(); // <-- removed date filter
     res.json({ count });
   } catch (err) {
     res.status(500).json({ error: "Failed to get events count" });

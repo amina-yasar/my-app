@@ -56,6 +56,11 @@ function Menu() {
     <RiAdminLine /> Admin
   </button>
 </Link>
+<Link to="/login">
+  <button className="admin-btn">
+    <RiAdminLine /> Create Profile
+  </button>
+</Link>
 
       <form className="d-flex me-2" role="search">
         <input className="form-control ms-3" type="search" placeholder="Search" />

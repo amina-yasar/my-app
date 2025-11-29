@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { loginAPI } from "./api/loginBridge";
+import axios from "axios";
 import "./LogIn.css";
 
 function LogIn() {
@@ -15,36 +15,34 @@ function LogIn() {
     const password = passwordRef.current.value;
 
     try {
-      const res = await loginAPI({ email, password });
-      console.log("Backend response:", res.data);
+      // Call the backend login API
+      const res = await axios.post("http://localhost:5000/api/login", {
+        email,
+        password,
+      });
 
-      // Backend now sends user object
+      // Extract the user object returned by backend
       const user = res.data.user;
 
-      if (!user) {
-        alert("Login failed: user not found or invalid credentials.");
+      if (!user || !user._id) {
+        alert("Login failed: Invalid user data returned from server.");
         return;
       }
 
-      // Save user info in localStorage
+      // Save the user object for later use (ViewProfile, etc.)
       localStorage.setItem("user", JSON.stringify(user));
-      console.log("User saved:", user);
-
-      // Redirect based on role (if you have roles in DB)
-      if (user.role === "admin") {
-        navigate("/adminportal");
-      } else {
-        navigate("/collections");
-      }
+      localStorage.setItem("userId", user._id);
 
       alert("Login successful!");
 
+      // Redirect based on role
+      if (user.role === "admin") navigate("/adminportal");
+      else if (user.role === "staff") navigate("/staffprofile");
+      else navigate("/");
+
     } catch (err) {
-      console.error(
-        "Login failed:",
-        err.response ? err.response.data : err
-      );
-      alert("Login failed. Invalid credentials or server error.");
+      console.error("Login failed:", err);
+      alert(err.response?.data?.error || "Login failed. Try again.");
     }
   };
 

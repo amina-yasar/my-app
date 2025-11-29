@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import {
   getChildrenCountAPI,
   getStaffCountAPI,
   getDonationsTotalAPI,
   getEventsCountAPI,
-} from "./api/dashboardBridge"; // Create these API functions
+} from "./api/dashboardBridge"; // Make sure your API functions exist
 import "./DashboardArea.css";
 
 function DashboardArea() {
-  const navigate = useNavigate();
-
   // State for counts
   const [counts, setCounts] = useState({
     children: 0,
@@ -46,33 +43,21 @@ function DashboardArea() {
 
   // Define cards with dynamic values
   const cards = [
-    { title: "Total Children", value: counts.children, route: "/admin/view-child" },
-    { title: "Total Staff", value: counts.staff, route: "/admin/administration-list" },
-    { title: "Total Donations", value: `$ ${counts.donations}`, route: "/admin/donor-list" },
-    { title: "Upcoming Events", value: counts.events, route: "/admin/upcoming-events" },
+    { title: "Total Children", value: counts.children },
+    { title: "Total Staff", value: counts.staff },
+    { title: "Total Donations", value: `$ ${counts.donations}` },
+    { title: "Upcoming Events", value: counts.events },
   ];
 
   return (
     <div className="main-content">
       <div className="stats-cards">
         {cards.map((card, index) => (
-          <Link
-            key={index}
-            to={card.route}
-            className="card"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
+          <div key={index} className="card">
             <h3>{card.title}</h3>
             <p>{card.value}</p>
-          </Link>
+          </div>
         ))}
-      </div>
-
-      {/* Back Button */}
-      <div className="back-button-container">
-        <button className="back-button" onClick={() => navigate(-1)}>
-          ← Back
-        </button>
       </div>
     </div>
   );

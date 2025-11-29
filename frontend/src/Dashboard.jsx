@@ -48,10 +48,10 @@ function Dashboard() {
         </li>
         {openMenu === "events" && (
           <ul className="submenu">
-            <li>Add Event</li>
-            <li>Update Event</li>
-            <li>View Events</li>
-            <li>Delete Event</li>
+          <li><Link to="/admin/add-events">Add Event</Link></li>
+            <li><Link to="/admin/update-events">Update Event</Link></li>
+            <li><Link to="/admin/view-events">View Event</Link></li>
+            <li><Link to="/admin/delete-events">Delete Event</Link></li>
           </ul>
         )}
 
@@ -60,11 +60,24 @@ function Dashboard() {
           Staff ▾
         </li>
         {openMenu === "staff" && (
+        <ul className="submenu">
+          <li><Link to="/admin/add-staff">Add Staff</Link></li>
+            <li><Link to="/admin/update-staff">Update Staff</Link></li>
+            <li><Link to="/admin/view-staff">View Staff</Link></li>
+            <li><Link to="/admin/delete-staff">Delete Staff</Link></li>
+          </ul>
+        )}
+
+         {/* admin */}
+        <li onClick={() => toggleMenu("admin")}>
+          Admin ▾
+        </li>
+        {openMenu === "admin" && (
           <ul className="submenu">
-            <li>Add Staff</li>
-            <li>Update Staff</li>
-            <li>View Staff</li>
-            <li>Delete Staff</li>
+            <li><Link to="/admin/add-admin">Add Admin</Link></li>
+            <li><Link to="/admin/update-admin">Update Admin</Link></li>
+            <li><Link to="/admin/view-admin">View Admin</Link></li>
+            <li><Link to="/admin/delete-admin">Delete Admin</Link></li>
           </ul>
         )}
 

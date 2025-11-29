@@ -1,0 +1,33 @@
+.admin-profile-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.profile-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.profile-card p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+strong {
+  color: #555;
+}
+
+.error {
+  color: red;
+  text-align: center;
+}

@@ -1,0 +1,45 @@
+.view-staff-container {
+  padding: 1rem 1.5rem;
+  max-width: 900px;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.view-staff-container h2 {
+  font-family: "Times New Roman", serif;
+  color: rgb(185, 14, 79);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.view-staff-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.view-staff-table th,
+.view-staff-table td {
+  border: 1px solid #ddd;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.view-staff-table th {
+  background-color: #f9f9f9;
+  color: rgb(185, 14, 79);
+  font-weight: 700;
+}
+
+.view-staff-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.view-staff-table td {
+  color: #333;
+}

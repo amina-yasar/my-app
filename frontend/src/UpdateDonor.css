@@ -1,0 +1,124 @@
+.donor-list-container {
+  padding: 1rem 1.5rem;
+  max-width: 750px;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.donor-list-title {
+  font-family: "Times New Roman", serif;
+  color: rgb(185, 14, 79);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.donor-list-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Form layout fixed: stack labels vertically */
+.form-row {
+  display: block;      /* stack labels vertically */
+}
+
+.form-row label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 0.8rem; /* spacing between inputs */
+}
+
+.form-row input {
+  width: 100%;         /* full width inputs */
+  padding: 0.45rem 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+  transition: border-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.form-row input:focus {
+  border-color: rgb(185, 14, 79);
+  box-shadow: 0 0 5px rgba(185, 14, 79, 0.4);
+  outline: none;
+}
+
+/* Buttons */
+.form-buttons {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.form-buttons button {
+  padding: 0.45rem 1.2rem;
+  background-color: rgb(185, 14, 79);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-buttons button:hover {
+  background-color: rgb(150, 10, 65);
+}
+
+.form-buttons button[type="button"] {
+  background-color: #aaa;
+}
+
+.form-buttons button[type="button"]:hover {
+  background-color: #888;
+}
+
+/* Table styling */
+.donor-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.donor-list-table th,
+.donor-list-table td {
+  border: 1px solid #ddd;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.donor-list-table th {
+  background-color: #f9f9f9;
+  color: rgb(185, 14, 79);
+  font-weight: 700;
+}
+
+.donor-list-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Edit/Delete button */
+.delete-btn {
+  background-color: rgb(185, 14, 79);
+  color: white;
+  border: none;
+  padding: 0.35rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: rgb(150, 10, 65);
+}

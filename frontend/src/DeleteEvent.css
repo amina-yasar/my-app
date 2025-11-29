@@ -1,0 +1,71 @@
+/* Container */
+.delete-event-container {
+  padding: 1.5rem;
+  max-width: 800px;
+  margin: 30px auto;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Title */
+.delete-event-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: rgb(185, 14, 79);
+  font-family: "Times New Roman", serif;
+}
+
+/* Table */
+.delete-events-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.delete-events-table th,
+.delete-events-table td {
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.delete-events-table th {
+  background: #f9f9f9;
+  font-weight: bold;
+  color: rgb(185, 14, 79);
+}
+
+.delete-events-table tr:nth-child(even) {
+  background: #f4f4f4;
+}
+
+/* Delete Button */
+.delete-btn {
+  padding: 0.45rem 1rem;
+  background-color:rgb(185, 14, 79);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  font-size: 0.85rem;
+}
+
+.delete-btn:hover {
+  background-color: darkred;
+  transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media (max-width: 750px) {
+  .delete-events-table th,
+  .delete-events-table td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}

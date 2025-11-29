@@ -1,0 +1,52 @@
+.delete-staff-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.staff-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.staff-table th,
+.staff-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.staff-table th {
+  background-color: #f4f4f4;
+}
+
+.staff-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}

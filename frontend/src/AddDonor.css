@@ -1,0 +1,88 @@
+.donor-list-container {
+  padding: 1rem 1.5rem;      /* Slight horizontal padding */
+  max-width: 650px;          /* Slightly smaller */
+  margin: 30px auto;         /* Top-bottom spacing reduced */
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.donor-list-title {
+  font-family: "Times New Roman", serif;
+  color: rgb(185, 14, 79);
+  text-align: center;
+  margin-bottom: 1rem;      /* Less space below title */
+  font-size: 1.8rem;
+}
+
+.donor-list-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;             /* Compact gap between inputs */
+}
+
+.donor-list-form label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.donor-list-form input {
+  width: 100%;
+  padding: 0.45rem 0.8rem;  /* Slightly smaller padding */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.donor-list-form input:focus {
+  border-color: rgb(185, 14, 79);
+  box-shadow: 0 0 5px rgba(185, 14, 79, 0.4);
+  outline: none;
+}
+
+.donor-list-form button {
+  padding: 0.45rem 1.2rem;
+  background-color: rgb(185, 14, 79);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: fit-content;      /* fits text only */
+  display: block;
+  margin: 0.4rem auto;     /* centers button with less space */
+}
+
+.donor-list-form button:hover {
+  background-color: rgb(150, 10, 65);
+}
+
+/* Table */
+.donor-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;        /* reduce spacing from form */
+}
+
+.donor-list-table th,
+.donor-list-table td {
+  border: 1px solid #ddd;
+  padding: 0.6rem 0.8rem;  /* reduce vertical padding */
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.donor-list-table th {
+  background-color: #f9f9f9;
+  color: rgb(185, 14, 79);
+  font-weight: 700;
+}
+
+.donor-list-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

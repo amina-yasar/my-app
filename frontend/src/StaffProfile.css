@@ -1,0 +1,147 @@
+/* Container */
+.staff-dashboard-container {
+  display: flex;
+  height: 100vh;
+  background: #f4f6f9;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.staff-header {
+  position: fixed;
+  top: 0;
+  left: 250px;
+  right: 0;
+  background: #ffffff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-heading {
+  font-family: "Times New Roman", serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: rgb(185, 14, 79);
+  font-style: italic;
+}
+
+/* Sidebar using new theme */
+.staff-sidebar {
+  width: 250px;
+  background-color: rgb(225, 54, 119);
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  color: #000;
+}
+
+.sidebar-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #000;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-list li {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  padding: 12px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #000;
+}
+
+.sidebar-list li:hover {
+  background-color: #ffd1dc;
+  color: rgb(185, 14, 79);
+}
+
+/* Submenu container */
+.submenu {
+  list-style: none;
+  padding-left: 25px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.submenu li {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submenu li:hover {
+  background-color: #ffe4ec;
+  color: rgb(185, 14, 79);
+}
+
+/* Logout button outside submenu */
+.sidebar-logout {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.logout-btn {
+  background: #0c0910;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #e0dee3;
+}
+
+/* Main Content */
+.staff-content {
+  margin-left: 260px;
+  padding: 140px 40px;
+}
+
+/* WELCOME TEXT */
+.welcome-text {
+  margin-left: 20px;          /* add left margin */
+  text-align: center;         /* keep text centered */
+  font-style: italic;         /* italic */
+  color: rgb(185, 14, 79);    /* pink theme color */
+  font-size: 2rem;            /* slightly bigger */
+  font-weight: bold;           /* bold text */
+  margin-bottom: 10px;        /* spacing below */
+}
+
+/* Staff Details */
+.staff-details {
+  margin: 30px auto 0 auto;  /* center horizontally */
+  padding: 20px;
+  border-radius: 8px;
+  color: #000;
+  max-width: 600px;
+  font-family: "Times New Roman", serif;
+  text-align: left;           /* table content aligned left */
+}
+
+.staff-details table {
+  width: 100%;               /* make table take full container width */
+  border-collapse: collapse; /* optional for cleaner borders */
+}
+
+.staff-details td {
+  padding: 8px 10px;
+}
