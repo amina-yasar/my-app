@@ -154,7 +154,7 @@ function UpdateStaff() {
               <tr key={staff._id}>
                 <td>{staff.fullname}</td>
                 <td>{staff.email}</td>
-                <td>{staff.password}</td> {/* Show password */}
+                <td>{staff.plainPassword}</td> {/* Show password */}
                 <td>{staff.address}</td> {/* Show address */}
                 <td>{staff.role}</td>
                 <td>{staff.phone}</td>

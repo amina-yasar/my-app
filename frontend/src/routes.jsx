@@ -28,7 +28,7 @@ import ViewStaff from './ViewStaff';
 import AdminProfile from './AdminProfile';
 
 import CreateProfile from './CreateProfile';
-// import UpdateProfile from './UpdateProfile';
+import UpdateProfile from './UpdateProfile';
 import DeleteProfile from './DeleteProfile';
 import ViewProfile from './ViewProfile';
 
@@ -70,10 +70,10 @@ const router = createBrowserRouter([
        { path: '/admin/delete-staff', element: <DeleteStaff /> },
         { path: '/admin/view-staff', element: <ViewStaff /> },
 
-        { path:"/staffprofile", element:<StaffProfile /> },
+        { path:"/staff/profile", element:<StaffProfile /> },
   { path: '/staff/create-profile', element: <CreateProfile /> },
     { path: '/staff/delete-profile', element: <DeleteProfile /> },
-    //  { path: '/staff/update-profile', element: <UpdateProfile /> },
+     { path: '/staff/update-profile', element: <UpdateProfile /> },
        { path: '/staff/view-profile', element: <ViewProfile /> },
 
   // Only if you want a frontend members page:

@@ -1,0 +1,141 @@
+/* Container for profile & edit form */
+.staff-list-container {
+  padding: 1rem 1.5rem;
+  max-width: 750px;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Title */
+.staff-list-title {
+  font-family: "Times New Roman", serif;
+  color: rgb(185, 14, 79);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+/* Table styling */
+.staff-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.staff-list-table th,
+.staff-list-table td {
+  border: 1px solid #ddd;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.staff-list-table th {
+  background-color: #f9f9f9;
+  color: rgb(185, 14, 79);
+  font-weight: 700;
+}
+
+.staff-list-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Edit Profile Button */
+.edit-btn {
+  display: block;
+  margin: 20px auto 0; /* centered below the table */
+  padding: 0.5rem 1.3rem;
+  background-color: rgb(185, 14, 79);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-btn:hover {
+  background-color: rgb(150, 10, 65);
+  transform: translateY(-2px);
+}
+
+/* Edit Form */
+.update-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 20px;
+  padding: 1.5rem;
+  background-color: #fff; /* same as main container */
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.update-form h3 {
+  text-align: center;
+  color: rgb(185, 14, 79);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.update-form label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgb(120, 0, 50);
+}
+
+.update-form input {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.update-form input:focus {
+  border-color: rgb(185, 14, 79);
+  box-shadow: 0 0 5px rgba(185, 14, 79, 0.2);
+  outline: none;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.update-form button {
+  padding: 0.5rem 1.3rem;
+  background-color: rgb(185, 14, 79);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.update-form button:hover {
+  background-color: rgb(150, 10, 65);
+  transform: translateY(-2px);
+}
+
+.update-form button[type="button"] {
+  background-color: #aaa;
+  color: #fff;
+}
+
+.update-form button[type="button"]:hover {
+  background-color: #888;
+  transform: translateY(-2px);
+}

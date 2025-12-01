@@ -10,39 +10,29 @@ function LogIn() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
     try {
-      // Call the backend login API
-      const res = await axios.post("http://localhost:5000/api/login", {
+      // Login API
+      const res = await axios.post("http://localhost:5000/api/auth/login", {
         email,
         password,
       });
 
-      // Extract the user object returned by backend
-      const user = res.data.user;
-
-      if (!user || !user._id) {
-        alert("Login failed: Invalid user data returned from server.");
-        return;
-      }
-
-      // Save the user object for later use (ViewProfile, etc.)
-      localStorage.setItem("user", JSON.stringify(user));
-      localStorage.setItem("userId", user._id);
+      // Store user info + JWT token
+      localStorage.setItem("user", JSON.stringify(res.data));
 
       alert("Login successful!");
 
-      // Redirect based on role
-      if (user.role === "admin") navigate("/adminportal");
-      else if (user.role === "staff") navigate("/staffprofile");
+      // Navigate based on role
+      if (res.data.user.role === "admin") navigate("/adminportal");
+      else if (res.data.user.role === "staff") navigate("/staff/profile");
       else navigate("/");
 
     } catch (err) {
       console.error("Login failed:", err);
-      alert(err.response?.data?.error || "Login failed. Try again.");
+      alert(err.response?.data?.error || "Invalid credentials");
     }
   };
 
@@ -74,9 +64,7 @@ function LogIn() {
             />
           </div>
 
-          <button type="submit" className="btn-login">
-            Log In
-          </button>
+          <button type="submit" className="btn-login">Log In</button>
 
           <div className="form-footer">
             <p>

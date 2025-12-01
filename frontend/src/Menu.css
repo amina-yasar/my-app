@@ -49,9 +49,9 @@
 }
 
 .admin-btn {
-  background: transparent;
-  color: #000;
-  border: 2px solid #000;
+  background:  rgb(185, 14, 79);;
+  color: #fff;
+  border: none;
   border-radius: 5px;
   padding: 3px 8px; /* reduced padding */
   display: flex;

@@ -48,7 +48,7 @@ function ViewStaff() {
                 <td>{index + 1}</td>
                 <td>{staff.fullname}</td>
                 <td>{staff.email}</td>
-                <td>{staff.password}</td>
+                <td>{staff.plainPassword}</td>
                 <td>{staff.address}</td>
                 <td>{staff.role}</td>
                 <td>{staff.phone}</td>

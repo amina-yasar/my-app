@@ -19,3 +19,8 @@ export const getStaffByIdAPI = (id) => axios.get(`${BASE_URL}/${id}`);
 
 // Get admin profile (no token required)
 export const getAdminProfileAPI = () => axios.get(`${BASE_URL}/admin/profile`);
+// Get logged-in staff profile
+export const getStaffProfileAPI = (token) =>
+  axios.get(`${BASE_URL}/profile`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });

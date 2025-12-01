@@ -1,5 +1,7 @@
 import User from "../models/User.js";
 import Staff from "../models/Staff.js";
+import bcrypt from "bcryptjs";
+
 
 export const loginUser = async (req, res) => {
   console.log("🔥 login API Hit");
@@ -28,7 +30,8 @@ export const loginUser = async (req, res) => {
     // 2️⃣ Staff login
     const staff = await Staff.findOne({ email });
     if (staff) {
-      if (staff.password !== password) {
+      const isMatch = await bcrypt.compare(password, staff.password);
+      if (!isMatch) {
         return res.status(401).json({ error: "Incorrect password" });
       }
 
@@ -49,7 +52,8 @@ export const loginUser = async (req, res) => {
     const user = await User.findOne({ email });
     if (!user) return res.status(404).json({ error: "User not found" });
 
-    if (user.password !== password) {
+    const isUserMatch = await bcrypt.compare(password, user.password);
+    if (!isUserMatch) {
       return res.status(401).json({ error: "Incorrect password" });
     }
 

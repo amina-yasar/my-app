@@ -1,21 +1,40 @@
+import User from "../models/User.js";
 import Staff from "../models/Staff.js";
+import bcrypt from "bcryptjs";   // ✅ Add this line
+
+
+import jwt from "jsonwebtoken";
+
+const generateToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_EXPIRES_IN,
+  });
+};
 
 // CREATE STAFF
+
 export const addStaff = async (req, res) => {
   try {
     const { fullname, email, password, address, role, phone, createdBy } = req.body;
 
-    if (!fullname || !email || !password || !role || !phone) {
-      return res.status(400).json({ error: "Please fill all required fields" });
-    }
-
     const existing = await Staff.findOne({ email });
     if (existing) return res.status(400).json({ error: "Email already exists" });
 
-    const newStaff = new Staff({ fullname, email, password, address, role, phone, createdBy });
-    const saved = await newStaff.save();
+   const newStaff = new Staff({
+  fullname,
+  email,
+  password,        // plain password → schema will hash it
+  plainPassword: password,
+  address,
+  role,
+  phone,
+  createdBy
+});
 
-    res.status(201).json(saved); // full staff object
+
+    const saved = await newStaff.save();
+    res.status(201).json(saved);
+
   } catch (err) {
     console.error("addStaff error:", err);
     res.status(500).json({ error: "Server error" });
@@ -38,13 +57,17 @@ export const getStaffById = async (req, res) => {
 // GET ALL STAFF
 export const getStaff = async (req, res) => {
   try {
-    const staff = await Staff.find().sort({ createdAt: -1 });
-    res.json(staff);
+const staff = await Staff.find()
+                         .sort({ createdAt: -1 })
+                         .select("fullname email role phone address plainPassword"); // include plainPassword
+res.json(staff);
+
   } catch (err) {
     console.error("getStaff error:", err);
     res.status(500).json({ error: "Server error" });
   }
 };
+
 
 // UPDATE STAFF
 export const updateStaff = async (req, res) => {
@@ -138,13 +161,36 @@ export const loginStaff = async (req, res) => {
     const staff = await Staff.findOne({ email });
     if (!staff) return res.status(404).json({ error: "Staff not found" });
 
-    if (staff.password !== password)
-      return res.status(400).json({ error: "Invalid password" });
+    const isMatch = await staff.matchPassword(password);
+    if (!isMatch) return res.status(401).json({ error: "Invalid credentials" });
 
-    // Return full staff object
-    res.json(staff);
+    // ✅ Return correct format for frontend
+    res.json({
+      user: {
+        _id: staff._id,
+        fullname: staff.fullname,
+        email: staff.email,
+        role: staff.role,
+      },
+      token: generateToken(staff._id),
+    });
   } catch (err) {
     console.error("loginStaff error:", err);
     res.status(500).json({ error: "Server error" });
   }
+};// GET LOGGED-IN STAFF PROFILE
+export const getProfile = async (req, res) => {
+  try {
+    const staff = await Staff.findById(req.user._id).select("-password -plainPassword");
+
+    if (!staff) {
+      return res.status(404).json({ error: "Staff not found" });
+    }
+
+    res.json(staff);
+  } catch (err) {
+    console.error("getProfile error:", err);
+    res.status(500).json({ error: "Server error" });
+  }
 };
+

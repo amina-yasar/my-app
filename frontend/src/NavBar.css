@@ -20,3 +20,20 @@
   align-items: center;
   width: 100%;
 }
+/* Donate Button Hover */
+.donate-btn:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.donate-btn:hover svg {
+  color: #fff;
+}
+
+/* Search Button Hover */
+.search-btn:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
