@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { getStaffAPI, addStaffAPI } from "./api/staffBridge";
+import axios from "axios";
 import "./AddStaff.css";
+
+const BASE_URL = "http://localhost:5000/api";
 
 function AddStaff() {
   const [form, setForm] = useState({
@@ -17,7 +19,7 @@ function AddStaff() {
   // Fetch staff from backend
   const fetchStaff = async () => {
     try {
-      const res = await getStaffAPI();
+      const res = await axios.get(`${BASE_URL}/staff`);
       setStaffList(res.data);
     } catch (err) {
       console.error("Failed to load staff", err);
@@ -43,8 +45,17 @@ function AddStaff() {
     }
 
     try {
-      await addStaffAPI(form);
-      alert("Staff added successfully!");
+      // Add new staff
+      const res = await axios.post(`${BASE_URL}/staff`, form);
+
+      // ⚡ Store user + token in localStorage immediately
+      localStorage.setItem("user", JSON.stringify({
+        user: res.data.user || res.data, // backend may return user object
+        token: res.data.token
+      }));
+
+      alert("Staff added successfully");
+
       setForm({ fullname: "", email: "", password: "", address: "", role: "", phone: "" });
       fetchStaff();
     } catch (err) {
@@ -68,7 +79,7 @@ function AddStaff() {
         </label>
         <label>
           Password
-          <input name="password" value={form.password} onChange={handleChange} type="password" placeholder="Password" />
+          <input name="password" value={form.plainPassword} onChange={handleChange} type="password" placeholder="Password" />
         </label>
         <label>
           Address
@@ -112,7 +123,7 @@ function AddStaff() {
                 <td>{index + 1}</td>
                 <td>{staff.fullname}</td>
                 <td>{staff.email}</td>
-                <td>{staff.plainPassword}</td>
+                <td>{staff.plainPassword || "N/A"}</td>
                 <td>{staff.address}</td>
                 <td>{staff.role}</td>
                 <td>{staff.phone}</td>

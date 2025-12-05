@@ -7,16 +7,19 @@ function ViewProfile() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
+  const fetchProfile = () => {
+   const stored = JSON.parse(localStorage.getItem("user"));
+const staffId = stored?.user?._id; // ✅ get id from stored.user
+const token = stored?.token;
 
-    if (!user?._id) {
-      setError("User not logged in or invalid user ID");
-      setLoading(false);
-      return;
-    }
+if (!staffId || !token) {
+  setError("User not logged in or invalid user ID");
+  setLoading(false);
+  return;
+}
 
-    getStaffByIdAPI(user._id)
+
+    getStaffByIdAPI(staffId, token)
       .then((res) => {
         if (res.data) setStaff(res.data);
         else setError("Staff profile not found");
@@ -27,6 +30,19 @@ function ViewProfile() {
         setError("Failed to load profile");
         setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    fetchProfile();
+
+    // Listen to localStorage changes
+    const handleStorageChange = () => {
+      fetchProfile();
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
   if (loading) return <p>Loading profile...</p>;
@@ -44,6 +60,10 @@ function ViewProfile() {
           <tr>
             <th>Email</th>
             <td>{staff?.email || "N/A"}</td>
+          </tr>
+          <tr>
+            <th>Password</th>
+            <td>{staff?.plainPassword}</td>
           </tr>
           <tr>
             <th>Phone</th>

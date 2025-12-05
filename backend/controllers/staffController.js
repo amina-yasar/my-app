@@ -3,14 +3,12 @@ import Staff from "../models/Staff.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
-// Helper: generate JWT token
 const generateToken = (id, role) => {
   return jwt.sign({ id, role }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN || "1d",
   });
 };
 
-// CREATE STAFF
 export const addStaff = async (req, res) => {
   try {
     const { fullname, email, password, address, role, phone, createdBy } = req.body;
@@ -18,12 +16,14 @@ export const addStaff = async (req, res) => {
     const existing = await Staff.findOne({ email });
     if (existing) return res.status(400).json({ error: "Email already exists" });
 
+    // Always hash the password before saving
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const newStaff = new Staff({
       fullname,
       email,
-      password: hashedPassword,
+      password: hashedPassword,  // hashed password
+      plainPassword: password,   // optional
       address,
       role,
       phone,
@@ -31,7 +31,22 @@ export const addStaff = async (req, res) => {
     });
 
     const saved = await newStaff.save();
-    res.status(201).json(saved);
+
+    // Generate token
+    const token = generateToken(saved._id, saved.role);
+
+    // Return user + token (like loginStaff)
+    res.status(201).json({
+      user: {
+        _id: saved._id,
+        fullname: saved.fullname,
+        email: saved.email,
+        role: saved.role,
+        phone: saved.phone,
+        address: saved.address,
+      },
+      token,
+    });
   } catch (err) {
     console.error("addStaff error:", err);
     res.status(500).json({ error: "Server error" });
@@ -156,13 +171,38 @@ export const getProfile = async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 };
-export const updateStaffProfile = async (req, res) => { 
-  
-  try { const { id } = req.params; const { fullname, email, password, phone, address, role } = req.body; 
-  if (!fullname || !email || !password || !phone || !address || !role) 
-    { return res.status(400).json({ error: "All fields are required" }); } 
-  const updatedStaff = await Staff.findByIdAndUpdate( id, 
-    { fullname, email, password, phone, address, role }, 
-     { new: true } ); if (!updatedStaff) return res.status(404).json({ error: "Staff not found" });
-      res.status(200).json(updatedStaff); } catch (err)
-       { console.error("updateStaffProfile error:", err); res.status(500).json({ error: "Server error" }); } };
+
+export const updateStaffProfile = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { fullname, email, password, phone, address, role } = req.body;
+
+    if (!fullname || !email || !password || !phone || !address || !role) {
+      return res.status(400).json({ error: "All fields are required" });
+    }
+
+    // Hash password for security
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const updatedStaff = await Staff.findByIdAndUpdate(
+      id,
+      { 
+        fullname, 
+        email, 
+        password: hashedPassword, 
+        plainPassword: password, // <-- store plain password
+        phone, 
+        address, 
+        role 
+      },
+      { new: true }
+    );
+
+    if (!updatedStaff) return res.status(404).json({ error: "Staff not found" });
+
+    res.status(200).json(updatedStaff); // Return updated staff including plainPassword
+  } catch (err) {
+    console.error("updateStaffProfile error:", err);
+    res.status(500).json({ error: "Server error" });
+  }
+};
