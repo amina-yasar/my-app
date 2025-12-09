@@ -12,8 +12,8 @@ function StaffProfile() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const token = localStorage.getItem("token"); // staff token
   const storedUser = JSON.parse(localStorage.getItem("user"));
-  const token = storedUser?.token;
 
   useEffect(() => {
     if (!token) {
