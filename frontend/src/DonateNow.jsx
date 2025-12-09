@@ -16,19 +16,25 @@ function DonateNow() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // prevent page reload
-    try {
-      // Call backend via Axios
-      const res = await donateAPI(formData);
-      console.log(res.data); // backend response
-      alert(`Thank you, ${formData.name}! Your donation of Rs.${formData.amount} is appreciated.`);
+    e.preventDefault();
+     // prevent page reload
+    // try {
+    //   // Call backend via Axios
+    //   const res = await donateAPI(formData);
+    //   console.log(res.data); // backend response
+    //   alert(`Thank you, ${formData.name}! Your donation of Rs.${formData.amount} is appreciated.`);
+
+
+         
       
-      // Clear form
-      setFormData({ name: "", email: "", amount: "" });
-    } catch (err) {
-      console.error(err);
-      alert("Error calling Donate API");
-    }
+    //   // Clear form
+    //   setFormData({ name: "", email: "", amount: "" });
+    // } catch (err) {
+    //   console.error(err);
+    //   alert("Error calling Donate API");
+    // }
+    
+  
   };
 
   return (

@@ -3,6 +3,7 @@ import { donateAPI } from "./api/donateBridge"; // Axios bridge
 import donation from './assets/images/donation.jpg';
 import { BsSuitHeartFill } from "react-icons/bs";
 import "./DonateNowPage.css";
+import axios from "axios";
 
 function DonateNowPage() {
   const [formData, setFormData] = useState({
@@ -18,7 +19,14 @@ function DonateNowPage() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // prevent page reload
+    e.preventDefault();
+     try {
+      const res = await axios.post(`http://localhost:5000/api/donate/create-checkout-session`, formData);
+      window.location.href = res.data.url; // redirect to Stripe Checkout
+    } catch (err) {
+      console.error(err);
+      alert("Error processing payment");
+    } // prevent page reload
     try {
       // Send all fields to backend
       const res = await donateAPI({
